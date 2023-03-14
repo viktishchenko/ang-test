@@ -1,13 +1,13 @@
-<article class="movie">
-  <img src="../assets/images/1.jpeg" alt="item" />
+<article
+  class="movie"
+  *ngFor="let movie of moviesList; let i = &quot;index+1&quot;"
+>
+  <img src="{{ '../assets/images/' + i + '.jpeg' }}" alt="item" />
   <div class="movie__content">
-    <div class="movie__title">Список Шиндлера</div>
+    <div class="movie__title">{{ movie.name }}</div>
     <div class="movie__genres">
-      <span class="genre">драма,</span>
-      <span class="genre"> биография,</span>
-      <span class="genre"> история,</span>
-      <span class="genre"> военный</span>
+      <span class="genre" *ngFor="let genre of movie.genre">{{ genre }}</span>
     </div>
-    <div class="movie__year">1993</div>
+    <div class="movie__year">{{ movie.year }}</div>
   </div>
 </article>
