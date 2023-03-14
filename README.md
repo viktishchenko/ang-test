@@ -47,3 +47,14 @@ git remote add origin git@github.com:viktishchenko/ang-test.git
 git push -u origin master
 
 ```
+
+### Data-Service-Component
+
+![data-service-component](src/assets/readmeAssets/data-service-component.png)
+
+```javascript
+
+ng g c components/movies-list
+ng g s services/MoviesListDataHandler
+
+```

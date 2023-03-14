@@ -1,0 +1,26 @@
+@import "../../../styles";
+
+.movie {
+    padding: 20px 15px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: $bodyFont;
+    img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+        }
+    }
+    
+.movie__title {
+        margin-bottom: 10px;
+        @include font(1.4rem, 1.6rem, 600);
+        color: $textDesc;
+    }
+.movie__genres {
+        margin-bottom: 10px;
+        >*{
+            padding-bottom: 1rem;
+            @include font(1.2rem, 1.4rem, 400);
+            color: $textDesc;
+        }
+    }
