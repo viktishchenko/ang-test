@@ -32,6 +32,11 @@ $max-width: 1120px;
     scroll-behavior: smooth;
   }
 
+  img{
+    display: block;
+    width: 100%;
+  }
+
 body {
     color: $textDesc;
     font-family: $bodyFont;
