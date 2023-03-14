@@ -1,4 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+$backgroundColor:  #1E1E1E;
+$backgroundMain:  #F4F4F4;
+$textColor: black;
+$textLight: #797979;
+$textDesc: #1D1838;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$bodyFont: "Montserrat", "Roboto", sans-serif;
+
+$max-content: 1390px;
+
+$cardRadius: 1rem;
+$inputRadius: .6rem;
+$letterSpacing: 1px;
+$transition: 0.3s ease-in-out all;
+$max-width: 1120px;
+
+@mixin font ($size, $height: $size, $weight: bold, $style: normal) {
+    font-size: $size;
+    font-style: $style;
+    font-weight: $weight;
+    line-height: $height;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+
+body {
+    color: $textDesc;
+    font-family: $bodyFont;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: normal;
+    background: $backgroundColor;
+    color: $textDesc;
+}
+
+.main {
+    
+    max-width: calc($max-content + 50px);
+    background-color: $backgroundMain;
+    margin: 0 auto;
+    padding: 37px 25px 44px;
+}
+
+.wrapper {
+    max-width: $max-content;
+    margin: auto;  
+}
+
+
+
+
+

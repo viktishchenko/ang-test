@@ -30,6 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Angular test
 
+[Specification →](https://docs.google.com/document/d/1RPpCYTWiJoYS93d_qOfFtfV1-yv8WkplVNfIZCHluD4/edit?usp=sharing)
+
+[Figma layout →](https://www.figma.com/file/IqrgwLaucFSeCDDrHOKPq5/ang-test?node-id=0%3A1&t=7PS41M4kY65YyDYs-1)
+
 ```javascript
 
 npm install -g @angular/cli

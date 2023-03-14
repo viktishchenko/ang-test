@@ -1,0 +1,8 @@
+@import '../styles';
+
+h1 {
+color: $textLight;
+font-family: $bodyFont;
+@include font(2rem, 2.2rem, 600);
+color: $textColor;
+}
