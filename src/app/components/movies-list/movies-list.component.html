@@ -6,7 +6,21 @@
   <div class="movie__content">
     <div class="movie__title">{{ movie.name }}</div>
     <div class="movie__genres">
-      <span class="genre" *ngFor="let genre of movie.genre">{{ genre }}</span>
+      <span class="genre" *ngFor="let genre of movie.genre" [ngSwitch]="genre">
+        <ng-template ngSwitchCase="1"> драма</ng-template>
+        <ng-template ngSwitchCase="2"> биография</ng-template>
+        <ng-template ngSwitchCase="3"> история</ng-template>
+        <ng-template ngSwitchCase="4"> фэнтези</ng-template>
+        <ng-template ngSwitchCase="5"> приключения</ng-template>
+        <ng-template ngSwitchCase="6"> боевик</ng-template>
+        <ng-template ngSwitchCase="7"> мультфильм</ng-template>
+        <ng-template ngSwitchCase="8"> комедия</ng-template>
+        <ng-template ngSwitchCase="9"> триллер</ng-template>
+        <ng-template ngSwitchCase="10"> детектив</ng-template>
+        <ng-template ngSwitchCase="11"> фантастика</ng-template>
+        <ng-template ngSwitchDefault></ng-template>
+      </span>
+      <!-- <span class="genre" *ngFor="let genre of movie.genre">{{ genre }}</span> -->
     </div>
     <div class="movie__year">{{ movie.year }}</div>
   </div>
