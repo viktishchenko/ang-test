@@ -6,19 +6,19 @@
   <div class="movie__content">
     <div class="movie__title">{{ movie.name }}</div>
     <div class="movie__genres">
-      <span class="genre" *ngFor="let genre of movie.genre" [ngSwitch]="genre">
-        <ng-template ngSwitchCase="1"> драма</ng-template>
-        <ng-template ngSwitchCase="2"> биография</ng-template>
-        <ng-template ngSwitchCase="3"> история</ng-template>
-        <ng-template ngSwitchCase="4"> фэнтези</ng-template>
-        <ng-template ngSwitchCase="5"> приключения</ng-template>
-        <ng-template ngSwitchCase="6"> боевик</ng-template>
-        <ng-template ngSwitchCase="7"> мультфильм</ng-template>
-        <ng-template ngSwitchCase="8"> комедия</ng-template>
-        <ng-template ngSwitchCase="9"> триллер</ng-template>
-        <ng-template ngSwitchCase="10"> детектив</ng-template>
-        <ng-template ngSwitchCase="11"> фантастика</ng-template>
-        <ng-template ngSwitchDefault></ng-template>
+      <span *ngFor="let genre of movie.genre" [ngSwitch]="genre">
+        <span *ngSwitchCase="1"> драма</span>
+        <span *ngSwitchCase="2"> биография</span>
+        <span *ngSwitchCase="3"> история</span>
+        <span *ngSwitchCase="4"> фэнтези</span>
+        <span *ngSwitchCase="5"> приключения</span>
+        <span *ngSwitchCase="6"> боевик</span>
+        <span *ngSwitchCase="7"> мультфильм</span>
+        <span *ngSwitchCase="8"> комедия</span>
+        <span *ngSwitchCase="9"> триллер</span>
+        <span *ngSwitchCase="10"> детектив</span>
+        <span *ngSwitchCase="11"> фантастика</span>
+        <span *ngSwitchDefault></span>
       </span>
       <!-- <span class="genre" *ngFor="let genre of movie.genre">{{ genre }}</span> -->
     </div>
