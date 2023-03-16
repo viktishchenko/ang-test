@@ -1,15 +1,15 @@
-@import '../styles';
+@import "../styles";
 
 h2 {
-color: $textLight;
-font-family: $bodyFont;
-@include font(2rem, 2.2rem, 600);
-color: $textColor;
+  color: $textLight;
+  font-family: $bodyFont;
+  @include font(2rem, 2.2rem, 600);
+  color: $textColor;
 }
 
 .movie-wrapper {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(190px, 190px));
-grid-template-rows: repeat(auto-fill,minmax(400px, 400px));
-grid-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 190px));
+  grid-template-rows: repeat(auto-fill, minmax(400px, 400px));
+  grid-gap: 1rem;
 }

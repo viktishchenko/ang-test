@@ -4,15 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { LikeButtonComponent } from './components/like-button/like-button.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    LikeButtonComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
