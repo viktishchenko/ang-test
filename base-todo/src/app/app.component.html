@@ -6,7 +6,11 @@
 <button (click)="printParentData()">print parent data</button> -->
 <!-- <app-basic-form></app-basic-form> -->
 <!-- <app-toggle></app-toggle> -->
-<h1>Reusable component</h1>
+<!-- <h1>Reusable component</h1>
 <ul *ngFor="let item of componentData">
   <app-reusable [user]="item"></app-reusable>
-</ul>
+</ul> -->
+<app-child-to-parent
+  (updateDataEvent)="updateData($event)"
+></app-child-to-parent>
+<h2>{{ parentData }}</h2>

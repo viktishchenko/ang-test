@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'base-todo';
-  parentData = 10;
+  parentData = '10';
   componentData = [
     { id: 1, name: 'Tom', email: 'tom@test.com' },
     { id: 2, name: 'John', email: 'john@test.com' },
@@ -16,5 +16,10 @@ export class AppComponent {
   printParentData() {
     console.log('halo');
     console.log('this.parentData', this.parentData);
+  }
+
+  updateData(item: string) {
+    console.log('item>>', item);
+    this.parentData = item;
   }
 }
