@@ -5,4 +5,8 @@
 <br />
 <button (click)="printParentData()">print parent data</button> -->
 <!-- <app-basic-form></app-basic-form> -->
-<app-toggle></app-toggle>
+<!-- <app-toggle></app-toggle> -->
+<h1>Reusable component</h1>
+<ul *ngFor="let item of componentData">
+  <app-reusable [user]="item"></app-reusable>
+</ul>

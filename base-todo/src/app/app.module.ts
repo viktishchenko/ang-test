@@ -7,6 +7,7 @@ import { ParentDataComponent } from './components/parent-data/parent-data.compon
 import { BasicFormComponent } from './components/basic-form/basic-form.component';
 import { FormsModule } from '@angular/forms';
 import { ToggleComponent } from './components/toggle/toggle.component';
+import { ReusableComponent } from './components/reusable/reusable.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ToggleComponent } from './components/toggle/toggle.component';
     ParentDataComponent,
     BasicFormComponent,
     ToggleComponent,
+    ReusableComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
