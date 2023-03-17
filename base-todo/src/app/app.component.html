@@ -1,2 +1,6 @@
 <h1>→ app.component</h1>
-<app-todo-base></app-todo-base>
+<!-- <app-todo-base></app-todo-base> -->
+<app-parent-data [getParentData]="parentData"></app-parent-data>
+<br />
+<br />
+<button (click)="printParentData()">print parent data</button>
