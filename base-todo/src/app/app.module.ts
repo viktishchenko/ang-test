@@ -6,6 +6,7 @@ import { TodoBaseComponent } from './components/todo-base/todo-base.component';
 import { ParentDataComponent } from './components/parent-data/parent-data.component';
 import { BasicFormComponent } from './components/basic-form/basic-form.component';
 import { FormsModule } from '@angular/forms';
+import { ToggleComponent } from './components/toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     TodoBaseComponent,
     ParentDataComponent,
     BasicFormComponent,
+    ToggleComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
