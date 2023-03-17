@@ -1,1 +1,13 @@
 <p>todo-base works!</p>
+
+<h1>todo base app</h1>
+
+<input type="text" #task placeholder="add task" />&nbsp;
+<button (click)="addTask(task.value)">add tsk</button>
+<br />
+<br />
+<ul *ngFor="let item of list">
+  <li>
+    {{ item.task }} <button (click)="removeTask(item.id)">&#10005;</button>
+  </li>
+</ul>
