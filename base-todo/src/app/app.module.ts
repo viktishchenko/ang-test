@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ToggleComponent } from './components/toggle/toggle.component';
 import { ReusableComponent } from './components/reusable/reusable.component';
 import { ChildToParentComponent } from './components/child-to-parent/child-to-parent.component';
+import { TwowayBindingComponent } from './components/twoway-binding/twoway-binding.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ChildToParentComponent } from './components/child-to-parent/child-to-pa
     ToggleComponent,
     ReusableComponent,
     ChildToParentComponent,
+    TwowayBindingComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

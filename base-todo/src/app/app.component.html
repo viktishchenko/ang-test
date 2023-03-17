@@ -10,7 +10,8 @@
 <ul *ngFor="let item of componentData">
   <app-reusable [user]="item"></app-reusable>
 </ul> -->
-<app-child-to-parent
+<!-- <app-child-to-parent
   (updateDataEvent)="updateData($event)"
 ></app-child-to-parent>
-<h2>{{ parentData }}</h2>
+<h2>{{ parentData }}</h2> -->
+<app-twoway-binding></app-twoway-binding>
