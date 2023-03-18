@@ -1,0 +1,25 @@
+<p>reactive-form works!</p>
+
+<h2 [style.textTransform]="'capitalize'">reactive form</h2>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <label for="user">Name</label><br />
+  <input
+    type="text"
+    placeholder="enter name"
+    name="user"
+    formControlName="user"
+  />
+  <br />
+  <br />
+  <label for="password">Password</label>
+  <br />
+  <input
+    type="password"
+    placeholder="enter password"
+    name="password"
+    formControlName="password"
+  />
+  <br />
+  <br />
+  <button>login</button>
+</form>

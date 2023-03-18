@@ -10,6 +10,8 @@ import { ToggleComponent } from './components/toggle/toggle.component';
 import { ReusableComponent } from './components/reusable/reusable.component';
 import { ChildToParentComponent } from './components/child-to-parent/child-to-parent.component';
 import { TwowayBindingComponent } from './components/twoway-binding/twoway-binding.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { TwowayBindingComponent } from './components/twoway-binding/twoway-bindi
     ReusableComponent,
     ChildToParentComponent,
     TwowayBindingComponent,
+    ReactiveFormComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
