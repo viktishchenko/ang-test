@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -7,6 +7,9 @@ import { Component, Input } from '@angular/core';
     &nbsp;
     <!-- <span>{{ childData }}</span> -->
     <span>{{ newDataName }}</span>
+
+    <br /><br />
+    <button (click)="fireEvent()">Send event to parent →</button>
   `,
   styles: [
     `
@@ -25,4 +28,8 @@ export class TestComponent {
   // @Input()
   // childData!: string;
   @Input('childData') newDataName!: string;
+  @Output() childEvent = new EventEmitter();
+  fireEvent() {
+    this.childEvent.emit('This sending from child component');
+  }
 }

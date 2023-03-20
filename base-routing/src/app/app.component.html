@@ -4,7 +4,9 @@
 <a routerLink="about">About</a><br />
 <br />
 <hr />
-<app-test [childData]="parentData"></app-test>
+<app-test (childEvent)="message = $event" [childData]="parentData"></app-test
+>&nbsp;
+<span>{{ message }}</span>
 <hr />
 <a routerLink="user">Users</a>
 
