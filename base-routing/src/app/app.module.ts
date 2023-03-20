@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserChild1Component } from './user-child1/user-child1.component';
 import { FormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     UserComponent,
     ErrorPageComponent,
     UserChild1Component,
+    TestComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
