@@ -1,3 +1,10 @@
 <h1 [style.color]="conditionalRendering ? 'red' : 'green'">Child-1 page!</h1>
 <h1 [style.color]="styleBinding">Child-1 page!</h1>
 <h1 [ngStyle]="objectStyleBinding">Child-1 page!</h1>
+<hr />
+<h3>class binding</h3>
+
+<h2 class="text-success">Class Binding</h2>
+<h2 [class]="classBinding">Class Binding</h2>
+<h2 [class.text-danger]="hasError">Class Binding</h2>
+<h2 [ngClass]="classBindingObject">Class Binding</h2>

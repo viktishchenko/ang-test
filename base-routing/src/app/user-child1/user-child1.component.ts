@@ -12,4 +12,13 @@ export class UserChild1Component {
     color: 'blue',
     fontStyle: 'italic',
   };
+
+  classBinding = 'text-success';
+  hasError = false;
+  isSpesial = true;
+  classBindingObject = {
+    'text-success': !this.hasError,
+    'text-danger': this.hasError,
+    'text-special': this.isSpesial,
+  };
 }
