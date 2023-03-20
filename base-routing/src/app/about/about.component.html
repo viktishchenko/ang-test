@@ -1,1 +1,31 @@
 <h1>About page!</h1>
+
+<div>{{ name }}</div>
+<div>{{ name | uppercase }} - UpperCase pipe</div>
+<div>{{ anotherOne | titlecase }} - TitleCase pipe</div>
+<div>{{ anotherOne | slice : 2 : 7 }} - slice(2,7) pipe</div>
+<div>{{ person | json }} - json pipe</div>
+
+<hr />
+
+<h3>{{ 3.453 | number : "1.2-3" }}<span> - number: '1.2-3'</span></h3>
+<h3>{{ 3.453 | number : "1.2-2" }}<span>- number: '1.2-2'</span></h3>
+<h3>{{ 3.453 | number : "3.4-5" }}<span> - number: '3.4-5'</span></h3>
+<h3>{{ 3.453 | number : "3.1-2" }}<span>- number: '3.1-2'</span></h3>
+
+<hr />
+
+<h3>{{ 0.25 | percent }}<span> - percent pipe 0.25</span></h3>
+
+<hr />
+
+<h3>{{ 0.25 | currency }}<span> - currency pipe 0.25</span></h3>
+<h3>{{ 0.25 | currency : "RUB" : "code" }}<span>- currency pipe 0.25</span></h3>
+<h3>{{ 0.25 | currency : "₽ " }}<span> - currency pipe 0.25</span></h3>
+
+<hr />
+
+<h3>{{ date }}<span> - date pipe</span></h3>
+<h3>{{ date | date : "short" }}<span>- date : "short" pipe</span></h3>
+<h3>{{ date | date : "shortDate" }}<span>- date : "shortDate" pipe</span></h3>
+<h3>{{ date | date : "shortTime" }}<span> - date : "shortTime" pipe</span></h3>
