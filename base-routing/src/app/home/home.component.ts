@@ -13,7 +13,10 @@ export class HomeComponent {
   handleClick() {
     this.flag = !this.flag;
   }
-  eventClick(event: any) {
+  eventClick(event: Event) {
     console.log('event', event);
+  }
+  logMassage(value: string) {
+    console.log('value', value);
   }
 }

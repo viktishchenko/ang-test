@@ -9,3 +9,7 @@
 <br />
 <button (click)="greet = 'Hi, there!'">event</button>
 {{ greet }}
+<br />
+<br />
+<input #myInput type="text" />&nbsp;
+<button (click)="logMassage(myInput.value)">log</button>
