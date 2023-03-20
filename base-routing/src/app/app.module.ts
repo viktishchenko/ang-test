@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { UserComponent } from './user/user.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserChild1Component } from './user-child1/user-child1.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,10 @@ import { UserChild1Component } from './user-child1/user-child1.component';
     AboutComponent,
     UserComponent,
     ErrorPageComponent,
-    UserChild1Component
+    UserChild1Component,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

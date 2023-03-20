@@ -1,3 +1,18 @@
 <h1>User page!</h1>
+
+<input [(ngModel)]="name" type="text" /> &nbsp;
+{{ name }}
+<br />
+<br />
+<hr />
+
+<div *ngIf="condition; else elseBlock">
+  <h2>Content to render when condition is true.</h2>
+</div>
+<ng-template #elseBlock>
+  <h2>Content to render when condition is false.</h2>
+</ng-template>
+
+<hr />
 <a routerLink="1">UserOne</a>
 <router-outlet></router-outlet>
