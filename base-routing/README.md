@@ -137,3 +137,32 @@ export class EmployeeService {
 }
 
 ```
+
+2. RECIVE THE OBSERVABLE AND CAST IT INTO EMP.ARR
+
+- add employee interface
+
+`emploee.ts`
+
+```javascript
+export interface iEmployee {
+  id: number;
+  name: string;
+  age: number;
+}
+```
+
+- add type of http request and Obsevable fron RxJs
+
+`employee.servece.ts`
+
+```javascript
+import { Observable } from 'rxjs';
+import { iEmployee } from './modules/employee';
+
+
+  getEmployees(): Observable<iEmployee[]> {
+    return this.http.get<iEmployee[]>(this._url);
+  }
+
+```

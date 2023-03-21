@@ -20,6 +20,6 @@ export class EmployeeComponent {
   constructor(private _employeeService: EmployeeService) {}
 
   ngOnInit() {
-    this.employeeList = this._employeeService.getEmployees();
+    // this.employeeList = this._employeeService.getEmployees();
   }
 }
