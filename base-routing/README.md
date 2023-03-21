@@ -93,3 +93,47 @@ export class EmployeeComponent {
 ### di service fin
 
 ![Alt text](src/assets/readmeAssets/di-service-fin.png)
+
+---
+
+## HTTP & Observables
+
+![Alt text](src/assets/readmeAssets/HTTP-mechanism.png)
+![Alt text](src/assets/readmeAssets/observables-explanation.png)
+![Alt text](src/assets/readmeAssets/observables-explanation2.png)
+
+1. GET REQUEST FROM EMPLOYEE SERVICE
+
+### add HttpClientModule
+
+`app.module.ts`
+
+```javascript
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+//
+//
+imports: [HttpClientModule],
+//
+})
+
+```
+
+`employee.servece.ts`
+
+```javascript
+import { HttpClient } from '@angular/common/http';
+
+export class EmployeeService {
+
+  private _url: string = "./assets/data/employee.json";
+
+  constructor(private http: HttpClient) {}
+
+  getEmployees() {
+    return this.http.get(this._url)
+  }
+}
+
+```
