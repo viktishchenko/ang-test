@@ -166,3 +166,27 @@ import { iEmployee } from './modules/employee';
   }
 
 ```
+
+![Alt text](src/assets/readmeAssets/observable&rxjs.png)
+
+3. SUBSCRIBE TO THE OBSERVABLE FROM EMP-LIST AND EMP-DETAIL
+
+`employee.component.ts` && `employee-detail.component.ts`
+
+```javascript
+export class EmployeeComponent {
+
+  employeeList!: iEmployee[];
+
+  constructor(private _employeeService: EmployeeService) {}
+
+  ngOnInit() {
+    this._employeeService
+      .getEmployees()
+      .subscribe((data) => (this.employeeList = data));
+  }
+}
+
+```
+
+![Alt text](src/assets/readmeAssets/get-http-observable-fin.png)

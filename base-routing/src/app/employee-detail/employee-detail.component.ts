@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { iEmployee } from '../modules/employee';
 
@@ -13,13 +13,15 @@ import { iEmployee } from '../modules/employee';
   `,
   styles: [``],
 })
-export class EmployeeDetailComponent {
+export class EmployeeDetailComponent implements OnInit {
   title = 'data list detail';
   employeeList: iEmployee[] = [];
 
   constructor(private _employee: EmployeeService) {}
 
   ngOnInit() {
-    this.employeeList = this._employee.getEmployees();
+    return this._employee
+      .getEmployees()
+      .subscribe((data) => (this.employeeList = data));
   }
 }
