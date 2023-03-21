@@ -10,6 +10,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { UserChild1Component } from './user-child1/user-child1.component';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,11 @@ import { TestComponent } from './test/test.component';
     ErrorPageComponent,
     UserChild1Component,
     TestComponent,
+    EmployeeComponent,
+    EmployeeDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
