@@ -190,3 +190,14 @@ export class EmployeeComponent {
 ```
 
 ![Alt text](src/assets/readmeAssets/get-http-observable-fin.png)
+
+---
+
+INLINE TEMPLATE & STYLE
+
+```javascript
+ng g c test -it -is // inline template inline style
+
+```
+
+---
