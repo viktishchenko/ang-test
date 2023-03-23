@@ -39,7 +39,9 @@ export class DepartmentListComponent implements OnInit {
   }
 
   onSelect(department: { id: number }) {
-    this.router.navigate(['departments', department.id]);
+    // this.router.navigate(['departments', department.id]);
+    // relative psth instead ↑↓
+    this.router.navigate([department.id], { relativeTo: this.route });
   }
 
   isSelected(department: { id: number }) {
