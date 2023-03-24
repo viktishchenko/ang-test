@@ -57,10 +57,18 @@ export const tasks: ITask[] = [
   },
   {
     id: 5,
-    title: '18.30 ужин',
-    priority: priorities[1],
-    completed: true,
+    title: '18.30 - ужин',
+    priority: priorities[4],
+    completed: false,
     category: categories[2],
+    date: new Date('1779-05-30'),
+  },
+  {
+    id: 6,
+    title: '22.00 - отход ко сну',
+    priority: priorities[1],
+    completed: false,
+    category: categories[3],
     date: new Date('1779-05-30'),
   },
 ];

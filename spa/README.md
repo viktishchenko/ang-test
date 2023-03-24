@@ -40,3 +40,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Alt text](src/assets/readmeAssets/directives.png)
 
 ![Alt text](src/assets/readmeAssets/component-directive.png)
+
+## event binding e.g (filer by category)
+
+[commit→](https://github.com/viktishchenko/ang-test/commit/9ba75ee27ebba4befaf633f51babed2789d6389c)
+![Alt text](src/assets/readmeAssets/event-binding.png)
+
+## RxJs wrappers
+
+![Alt text](src/assets/readmeAssets/RxJs-objects.png)
+
+![Alt text](src/assets/readmeAssets/rxjs-explain.png)
+
+![Alt text](src/assets/readmeAssets/data-recipe.png)
