@@ -30,4 +30,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## pass data from service to component
 
+- внедрение зависимости - Dependency Injection - получение ссылки на экземпляр класса в любом месте приложения.
+- CategoryComponent получает доступ к DataService
+
+[commit→](https://github.com/viktishchenko/ang-test/commit/b1102b7ec4896c39d698aa6a326eaf4f9ab89797)
+
 ![Alt text](src/assets/readmeAssets/pass-data-from-service.png)
+
+![Alt text](src/assets/readmeAssets/directives.png)
+
+![Alt text](src/assets/readmeAssets/component-directive.png)
