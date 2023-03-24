@@ -48,8 +48,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## RxJs wrappers
 
+[commit→](https://github.com/viktishchenko/ang-test/commit/7cdd9621715110ea418ec9754806c0953d6ff233)
+
 ![Alt text](src/assets/readmeAssets/RxJs-objects.png)
 
 ![Alt text](src/assets/readmeAssets/rxjs-explain.png)
 
 ![Alt text](src/assets/readmeAssets/data-recipe.png)
+
+`wrapper init`
+
+![Alt text](src/assets/readmeAssets/subject-rx-wrapper.png)
+
+`add subscriber`
+
+![Alt text](src/assets/readmeAssets/rxjs-subscriber.png)
