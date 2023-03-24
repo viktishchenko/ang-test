@@ -3,16 +3,18 @@ import { ICategory } from 'src/app/models/category';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-categoties',
-  templateUrl: './categoties.component.html',
-  styleUrls: ['./categoties.component.scss'],
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss'],
 })
-export class CategotiesComponent implements OnInit {
+export class CategoriesComponent implements OnInit {
   categories: ICategory[] = [];
   constructor(private dataHandler: DataService) {}
 
   ngOnInit() {
-    this.categories = this.dataHandler.getCategories();
+    this.dataHandler.categorySubject.subscribe(
+      (categories) => (this.categories = categories)
+    );
   }
 
   showTasksByCategory(category: ICategory) {

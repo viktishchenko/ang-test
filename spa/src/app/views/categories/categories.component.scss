@@ -3,3 +3,7 @@
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
     0 7px 10px -5px rgb(163, 167, 234);
 }
+.sidebar .nav li .dropdown-menu a,
+.sidebar .nav li a {
+  cursor: pointer;
+}
