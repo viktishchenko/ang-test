@@ -16,4 +16,10 @@ export class DataService {
   getTasks(): ITask[] {
     return tasks;
   }
+
+  getTasksByCategory(category: ICategory): ITask[] {
+    const task = tasks.filter((el) => el.category === category);
+    console.log('task', task);
+    return task;
+  }
 }
