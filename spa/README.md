@@ -72,3 +72,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [`pipe e.g. →`](https://angular.io/api/common/DatePipe)
 
 ![Alt text](src/assets/readmeAssets/pipe-eg.png)
+
+## add active class
+
+![Alt text](src/assets/readmeAssets/add-active-class.png)
+
+![Alt text](src/assets/readmeAssets/add-active-class-logic.png)

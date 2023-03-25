@@ -8,6 +8,7 @@
         *ngFor="let category of categories"
         class="nav-item"
         (click)="showTasksByCategory(category)"
+        [class.active]="category === selectedCategory"
       >
         <a class="nav-link">
           <p>{{ category.title }}</p>
