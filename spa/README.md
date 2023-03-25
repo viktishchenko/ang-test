@@ -89,6 +89,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## task status
 
+[commit →](https://github.com/viktishchenko/ang-test/commit/80d43a7bb234be8a92a00ae133db3d0c024f2e31)
+
 ![Alt text](src/assets/readmeAssets/task-status.png)
 
 ![Alt text](src/assets/readmeAssets/toggle-class.png)

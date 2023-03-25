@@ -19,11 +19,17 @@
         >
           <td>{{ i + 1 }}</td>
           <td>{{ task.title }}</td>
-          <td>
+          <td [class.empty]="task.category == null">
             {{ task.category != null ? task.category.title : "Без категории" }}
           </td>
-          <td>{{ task.priority?.title }}</td>
-          <td>{{ task.date | date : "MMM d, y" }}</td>
+          <td [class.empty]="task.priority == null">
+            {{ task.priority != null ? task.priority.title : "Без приоритета" }}
+          </td>
+          <td [class.empty]="task.date == null">
+            {{
+              task.date != null ? (task.date | date : "MMM d, y") : "Без даты"
+            }}
+          </td>
           <td>
             <div class="form-check">
               <label class="form-check-label">
