@@ -86,3 +86,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## rehearsal
 
 ![Alt text](src/assets/readmeAssets/rehearsal.png)
+
+## task status
+
+![Alt text](src/assets/readmeAssets/task-status.png)
+
+![Alt text](src/assets/readmeAssets/toggle-class.png)
+
+![Alt text](src/assets/readmeAssets/toggle.png)
