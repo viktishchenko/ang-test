@@ -75,6 +75,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## add active class
 
+[commit →](https://github.com/viktishchenko/ang-test/commit/2cfb35166cfd2d52cba6ccba5fb1d0536e0e99c2)
+
+![Alt text](src/assets/readmeAssets/atribute-derective.png)
+
 ![Alt text](src/assets/readmeAssets/add-active-class.png)
 
 ![Alt text](src/assets/readmeAssets/add-active-class-logic.png)
+
+## rehearsal
+
+![Alt text](src/assets/readmeAssets/rehearsal.png)
