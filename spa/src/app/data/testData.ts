@@ -53,7 +53,7 @@ export const tasks: ITask[] = [
     id: 4,
     title: '16.00 – война с Англией',
     completed: false,
-    category: categories[2],
+    // category: categories[2],
   },
   {
     id: 5,
