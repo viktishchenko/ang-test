@@ -57,9 +57,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Alt text](src/assets/readmeAssets/data-recipe.png)
 
 `wrapper init`
+[commit →](https://github.com/viktishchenko/ang-test/commit/6aef30ea96006b6fb5adf8aba68eab96e6fc206e)
 
 ![Alt text](src/assets/readmeAssets/subject-rx-wrapper.png)
 
 `add subscriber`
 
 ![Alt text](src/assets/readmeAssets/rxjs-subscriber.png)
+
+## Pipe
+
+![Alt text](src/assets/readmeAssets/add-pipe.png)
+
+[`pipe e.g. →`](https://angular.io/api/common/DatePipe)
+
+![Alt text](src/assets/readmeAssets/pipe-eg.png)
