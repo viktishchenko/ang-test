@@ -97,6 +97,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ![Alt text](src/assets/readmeAssets/toggle.png)
 
-## add A material modules
+## add A-material modules
 
 ![Alt text](src/assets/readmeAssets/a-material-modules.png)
+
+![Alt text](src/assets/readmeAssets/mat-table-eg.png)

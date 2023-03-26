@@ -37,7 +37,7 @@ export const tasks: ITask[] = [
     id: 2,
     title: 'в 7 – разгон облаков и установление хорошей погоды',
     priority: priorities[2],
-    completed: true,
+    completed: false,
     category: categories[1],
   },
 
@@ -52,6 +52,7 @@ export const tasks: ITask[] = [
   {
     id: 4,
     title: '16.00 – война с Англией',
+    priority: priorities[3],
     completed: false,
     // category: categories[2],
   },
