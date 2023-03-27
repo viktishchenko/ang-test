@@ -106,32 +106,32 @@ export class TasksComponent implements OnInit, AfterViewInit {
     this.addTableObjects();
 
     // category and priority contain objectsб not primitives
-    // @ts-ignore - data type error ↓↓↓, JUST IGNORE IT?
-    // this.dataSource.sortingDataAccessor = (task, colName) => {
-    //   // sorting criteria for selected fields
-    //   switch (colName) {
-    //     case 'priority': {
-    //       return task.priority ? task.priority.id : null;
-    //     }
-    //     case 'category': {
-    //       return task.category ? task.category.title : null;
-    //     }
-    //     case 'date': {
-    //       return task.date ? task.date : null;
-    //     }
+    // @ ts-ignore - data type error ↓↓↓, JUST IGNORE IT?
+    this.dataSource.sortingDataAccessor = (task: any, colName) => {
+      // sorting criteria for selected fields
+      switch (colName) {
+        case 'priority': {
+          return task.priority ? task.priority.id : null;
+        }
+        case 'category': {
+          return task.category ? task.category.title : null;
+        }
+        case 'date': {
+          return task.date ? task.date : null;
+        }
 
-    //     case 'title': {
-    //       return task.title;
-    //     }
-    //   }
-    // };
+        case 'title': {
+          return task.title;
+        }
+      }
+    };
   }
 
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-  }
+  // applyFilter(filterValue: string) {
+  //   filterValue = filterValue.trim(); // Remove whitespace
+  //   filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+  //   this.dataSource.filter = filterValue;
+  // }
 
   private addTableObjects() {
     this.dataSource.sort = this.sort; // data sorting
