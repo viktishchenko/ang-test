@@ -106,3 +106,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## pagination & basic sorting
 
 ![Alt text](src/assets/readmeAssets/data-sort-pagination.png)
+
+## angular component life cycle
+
+![Alt text](src/assets/readmeAssets/life-cycle.png)
