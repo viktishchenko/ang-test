@@ -2,7 +2,10 @@
   <div class="card-header card-header-warning">
     <h4 class="card-title">Барона Карла Фридриха Иеронима фон Мюнхгаузена:</h4>
   </div>
-  <div class="card-body table-responsive">
+  <div
+    *ngIf="tasks.length > 0; else elseBlock"
+    class="card-body table-responsive"
+  >
     <table [dataSource]="dataSource" mat-table matSort>
       <!--  colors priority  -->
       <ng-container matColumnDef="color">
@@ -47,11 +50,14 @@
         <th *matHeaderCellDef mat-header-cell mat-sort-header>Срок</th>
         <td
           *matCellDef="let task"
-          [ngClass]="{ completed: task.completed, nodate: !task.date }"
+          [ngClass]="{
+            completed: task.completed,
+            empty: !task.date
+          }"
           class="col-date"
           mat-cell
         >
-          {{ task.date | date : "medium" }}
+          {{ task.date ? (task.date | date : "medium") : "Без даты" }}
         </td>
       </ng-container>
 
@@ -63,7 +69,8 @@
           class="col-priority"
           [ngClass]="{
             completed: task.completed,
-            nopriority: task.priority == null
+            nopriority: task.priority == null,
+            empty: !task.priority
           }"
           mat-cell
         >
@@ -80,7 +87,8 @@
           [ngClass]="{
             completed: task.completed,
             nocategory: task.category == null,
-            link: !task.completed && task.category
+            link: !task.completed && task.category,
+            empty: !task.category
           }"
           mat-cell
         >
@@ -97,11 +105,14 @@
 
     <mat-paginator
       [length]="20"
-      [pageSize]="3"
+      [pageSize]="10"
       [pageSizeOptions]="[5, 10, 20, 50]"
       showFirstLastButtons
     ></mat-paginator>
   </div>
+  <ng-template #elseBlock>
+    <div class="no-data">Ничего не найдено.</div>
+  </ng-template>
 </div>
 
 <!-- <table class="table table-hover">
