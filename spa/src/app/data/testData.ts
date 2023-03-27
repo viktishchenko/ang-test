@@ -26,50 +26,158 @@ export const priorities: IPriority[] = [
 export const tasks: ITask[] = [
   {
     id: 1,
-    title: '6 часов – подъем',
-    priority: priorities[0],
+    title: 'Скамейки в парке, пустыри',
+    priority: priorities[2],
     completed: false,
-    category: categories[0],
-    date: new Date('1779-05-30'),
+    category: categories[9],
+    date: new Date('2019-04-10'),
   },
 
   {
     id: 2,
-    title: 'в 7 – разгон облаков и установление хорошей погоды',
-    priority: priorities[2],
+    title: 'По той же все, нехоженой судьбе',
+    priority: priorities[0],
     completed: false,
-    category: categories[1],
+    category: categories[0],
+    date: new Date('2019-04-11'),
   },
 
   {
     id: 3,
-    title: ' с 8 до 10 – подвиг',
+    title: 'Каких клинков, какой метал',
+    priority: priorities[2],
+    completed: true,
+    category: categories[1],
+  },
+
+  {
+    id: 4,
+    title: 'Версия необузданности – 1.00.00',
     priority: priorities[1],
     completed: false,
     category: categories[1],
-    date: new Date('1779-05-30'),
-  },
-  {
-    id: 4,
-    title: '16.00 – война с Англией',
-    priority: priorities[3],
-    completed: false,
-    // category: categories[2],
+    date: new Date('2019-08-17'),
   },
   {
     id: 5,
-    title: '18.30 - ужин',
-    priority: priorities[4],
+    title: 'Он где твой парус трепетал',
     completed: false,
     category: categories[2],
-    date: new Date('1779-05-30'),
   },
   {
     id: 6,
-    title: '22.00 - отход ко сну',
+    title: 'Сдави и омой дрожащую кость',
     priority: priorities[1],
+    completed: true,
+    category: categories[2],
+    date: new Date('2019-06-11'),
+  },
+
+  {
+    id: 7,
+    title: 'И ты не жди, раз дома нету',
+    priority: priorities[2],
     completed: false,
     category: categories[3],
-    date: new Date('1779-05-30'),
+  },
+  {
+    id: 8,
+    title: 'Глаза чарующего мая',
+    completed: false,
+    category: categories[5],
+  },
+  {
+    id: 9,
+    title: 'Как снег души на улице лежит',
+    priority: priorities[2],
+    completed: false,
+    category: categories[4],
+    date: new Date('2019-03-12'),
+  },
+  {
+    id: 10,
+    title: 'У нее еще вчера',
+    priority: priorities[0],
+    completed: true,
+    category: categories[4],
+  },
+
+  {
+    id: 11,
+    title: 'Наполнит ветер ночь интриг',
+    completed: false,
+  },
+
+  {
+    id: 12,
+    title: 'Выученный, уверенный',
+    priority: priorities[1],
+    completed: false,
+    category: categories[2],
+  },
+  {
+    id: 13,
+    title: 'Шалят на улицах столицы',
+    priority: priorities[2],
+    completed: false,
+    category: categories[5],
+    date: new Date('2019-05-11'),
+  },
+
+  {
+    id: 14,
+    title: 'Но время, грезя предстоящим',
+    completed: true,
+    category: categories[0],
+  },
+
+  {
+    id: 15,
+    title: 'Рыльце отвернула',
+    priority: priorities[2],
+    completed: true,
+  },
+
+  {
+    id: 16,
+    title: 'Я старше Пушкина',
+    priority: priorities[3],
+    completed: false,
+    category: categories[6],
+  },
+
+  {
+    id: 17,
+    title: 'Уж не коней подгонит, а машины',
+    priority: priorities[2],
+    completed: false,
+    category: categories[6],
+  },
+
+  {
+    id: 18,
+    title: 'А  вместо снежного покрова',
+    priority: priorities[3],
+    completed: false,
+    category: categories[8],
+    date: new Date('2020-12-11'),
+  },
+
+  {
+    id: 19,
+    title: 'И улица свивается в клубок',
+    priority: priorities[0],
+    completed: false,
+    category: categories[7],
+    date: new Date('2019-10-11'),
+  },
+
+  {
+    id: 20,
+    title: 'По той же все, нехоженой судьбе',
+    priority: priorities[0],
+    completed: false,
+    category: categories[4],
+    date: new Date('2019-03-17'),
   },
 ];

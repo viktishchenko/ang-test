@@ -3,7 +3,7 @@
     <h4 class="card-title">Барона Карла Фридриха Иеронима фон Мюнхгаузена:</h4>
   </div>
   <div class="card-body table-responsive">
-    <table [dataSource]="dataSource" mat-table>
+    <table [dataSource]="dataSource" mat-table matSort>
       <!--  colors priority  -->
       <ng-container matColumnDef="color">
         <th *matHeaderCellDef mat-header-cell></th>
@@ -18,14 +18,20 @@
       <!-- numeration -->
       <ng-container matColumnDef="id">
         <th *matHeaderCellDef mat-header-cell></th>
+        <td *matCellDef="let task" class="col-id" mat-cell>
+          {{ task.id }}
+        </td>
+      </ng-container>
+      <!--       <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell></th>
         <td *matCellDef="let idx = index" class="col-id" mat-cell>
           {{ idx + 1 }}
         </td>
-      </ng-container>
+      </ng-container> -->
 
       <!-- task name -->
       <ng-container matColumnDef="title">
-        <th *matHeaderCellDef mat-header-cell>Название</th>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Название</th>
         <td
           *matCellDef="let task"
           [class.completed]="task.completed"
@@ -38,7 +44,7 @@
 
       <!-- completion date -->
       <ng-container matColumnDef="date">
-        <th *matHeaderCellDef mat-header-cell>Срок</th>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Срок</th>
         <td
           *matCellDef="let task"
           [ngClass]="{ completed: task.completed, nodate: !task.date }"
@@ -51,7 +57,7 @@
 
       <!-- priority -->
       <ng-container matColumnDef="priority">
-        <th *matHeaderCellDef mat-header-cell>Приоритет</th>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Приоритет</th>
         <td
           *matCellDef="let task"
           class="col-priority"
@@ -67,7 +73,7 @@
 
       <!-- category -->
       <ng-container matColumnDef="category">
-        <th *matHeaderCellDef mat-header-cell>Категория</th>
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Категория</th>
         <td
           *matCellDef="let task"
           class="col-category"
@@ -88,6 +94,13 @@
       <!-- table rows - a set of rows from td tags (the order is specified in the displayedColumns variable) -->
       <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
     </table>
+
+    <mat-paginator
+      [length]="20"
+      [pageSize]="3"
+      [pageSizeOptions]="[5, 10, 20, 50]"
+      showFirstLastButtons
+    ></mat-paginator>
   </div>
 </div>
 
