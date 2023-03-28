@@ -122,3 +122,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Alt text](src/assets/readmeAssets/DAO-services.png)
 
 ![Alt text](src/assets/readmeAssets/DAO-services-2.png)
+
+![Alt text](src/assets/readmeAssets/input-decorator.png)
+
+![Alt text](src/assets/readmeAssets/parent-child-input.png)

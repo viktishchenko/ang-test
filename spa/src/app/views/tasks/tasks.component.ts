@@ -1,10 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  Injectable,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, Injectable, Input, OnInit, ViewChild } from '@angular/core';
 import { ITask } from 'src/app/models/task';
 import { DataService } from 'src/app/services/data.service';
 import { MatTableDataSource } from '@angular/material/table';
@@ -41,7 +35,7 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss'],
 })
-export class TasksComponent implements OnInit, AfterViewInit {
+export class TasksComponent implements OnInit {
   @ViewChild(MatPaginator)
   private paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -59,21 +53,22 @@ export class TasksComponent implements OnInit, AfterViewInit {
 
   dataSource!: MatTableDataSource<ITask>;
 
+  @Input()
   tasks: ITask[] = [];
 
   constructor(private dataHandler: DataService) {}
 
   ngOnInit(): void {
-    this.dataHandler.getAllTasks().subscribe((tasks) => (this.tasks = tasks));
+    // this.dataHandler.getAllTasks().subscribe((tasks) => (this.tasks = tasks));
     // init data!!! (add: DB, arr, JSON, etc.)
     this.dataSource = new MatTableDataSource();
-    this.refreshTable();
+    this.fillTable();
   }
 
   // Set the paginator and sort after the view init
-  ngAfterViewInit(): void {
-    this.addTableObjects();
-  }
+  // ngAfterViewInit(): void {
+  //   this.addTableObjects();
+  // }
 
   toggleClassCompleted(task: ITask) {
     task.completed = !task.completed;
@@ -97,7 +92,7 @@ export class TasksComponent implements OnInit, AfterViewInit {
   }
 
   // show current conditions =(category, search, filters,etc.)
-  private refreshTable() {
+  private fillTable() {
     this.dataSource!.data = this.tasks; // upd data source
 
     this.addTableObjects();
