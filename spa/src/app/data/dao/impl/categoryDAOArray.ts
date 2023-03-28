@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ICategory } from 'src/app/models/category';
+import { categories } from '../../testData';
 import { ICategoryDAO } from '../interface/categoryDAO';
 
 export class CategoryDAOArray implements ICategoryDAO {
@@ -7,7 +8,7 @@ export class CategoryDAOArray implements ICategoryDAO {
     throw new Error('Method not implemented.');
   }
   getAll(): Observable<ICategory[]> {
-    throw new Error('Method not implemented.');
+    return of(categories);
   }
   get(id: number): Observable<ICategory> {
     throw new Error('Method not implemented.');

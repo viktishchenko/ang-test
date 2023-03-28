@@ -12,8 +12,6 @@ import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { Subject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 
-//--->
-
 @Injectable()
 export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   changes = new Subject<void>();
@@ -66,7 +64,7 @@ export class TasksComponent implements OnInit, AfterViewInit {
   constructor(private dataHandler: DataService) {}
 
   ngOnInit(): void {
-    this.dataHandler.taskSubject.subscribe((tasks) => (this.tasks = tasks));
+    this.dataHandler.getAllTasks().subscribe((tasks) => (this.tasks = tasks));
     // init data!!! (add: DB, arr, JSON, etc.)
     this.dataSource = new MatTableDataSource();
     this.refreshTable();

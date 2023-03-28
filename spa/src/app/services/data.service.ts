@@ -1,29 +1,24 @@
 import { Injectable } from '@angular/core';
 import { ICategory } from '../models/category';
-import { categories, tasks } from '../data/testData';
 import { ITask } from '../models/task';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { TasksDAOArray } from '../data/dao/impl/tasksDAOArray';
+import { CategoryDAOArray } from '../data/dao/impl/categoryDAOArray';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  // add Rx Subject-wrapper, tracked obj, its type
-  taskSubject = new BehaviorSubject<ITask[]>(tasks);
-  categorySubject = new BehaviorSubject<ICategory[]>(categories);
+  private taskDAOArray = new TasksDAOArray();
+  private categoryDAOArray = new CategoryDAOArray();
 
   constructor() {}
 
-  /*   getCategories(): ICategory[] {
-    return categories;
-  } */
-
-  fillTasks() {
-    this.taskSubject.next(tasks);
+  getAllTasks(): Observable<ITask[]> {
+    return this.taskDAOArray.getAll();
   }
 
-  fillTasksByCategory(category: ICategory) {
-    const task = tasks.filter((el) => el.category === category);
-    this.taskSubject.next(task);
+  getAllCategories(): Observable<ICategory[]> {
+    return this.categoryDAOArray.getAll();
   }
 }

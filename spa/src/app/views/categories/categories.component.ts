@@ -13,13 +13,13 @@ export class CategoriesComponent implements OnInit {
   constructor(private dataHandler: DataService) {}
 
   ngOnInit() {
-    this.dataHandler.categorySubject.subscribe(
-      (categories) => (this.categories = categories)
-    );
+    this.dataHandler
+      .getAllCategories()
+      .subscribe((categories) => (this.categories = categories));
   }
 
   showTasksByCategory(category: ICategory) {
-    this.selectedCategory = category;
-    this.dataHandler.fillTasksByCategory(category);
+    // this.selectedCategory = category;
+    // this.dataHandler.fillTasksByCategory(category);
   }
 }
