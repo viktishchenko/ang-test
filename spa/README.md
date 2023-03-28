@@ -110,3 +110,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## angular component life cycle
 
 ![Alt text](src/assets/readmeAssets/life-cycle.png)
+
+## patterns
+
+### DAO ([data access object](https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm))
+
+[TS OOP patterns](https://www.netguru.com/blog/top-5-most-used-patterns-in-oop-with-typescript)
