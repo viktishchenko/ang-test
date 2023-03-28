@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICategory } from './models/category';
 import { ITask } from './models/task';
 import { DataService } from './services/data.service';
 
@@ -10,6 +11,7 @@ import { DataService } from './services/data.service';
 export class AppComponent implements OnInit {
   title = 'spa';
   tasks: ITask[] = [];
+  categories: ICategory[] = [];
 
   constructor(private dataHandler: DataService) {}
 
@@ -17,5 +19,8 @@ export class AppComponent implements OnInit {
     this.dataHandler
       .getAllTasks()
       .subscribe((tasks: ITask[]) => (this.tasks = tasks));
+    this.dataHandler
+      .getAllCategories()
+      .subscribe((categories) => (this.categories = categories));
   }
 }

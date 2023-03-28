@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ICategory } from 'src/app/models/category';
 import { DataService } from 'src/app/services/data.service';
 
@@ -8,14 +8,14 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-  categories: ICategory[] = [];
+  @Input() categories: ICategory[] = [];
   selectedCategory: ICategory | undefined;
   constructor(private dataHandler: DataService) {}
 
   ngOnInit() {
-    this.dataHandler
-      .getAllCategories()
-      .subscribe((categories) => (this.categories = categories));
+    // this.dataHandler
+    //   .getAllCategories()
+    //   .subscribe((categories) => (this.categories = categories));
   }
 
   showTasksByCategory(category: ICategory) {
