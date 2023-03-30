@@ -52,4 +52,8 @@ npm i concurrently
     "lint": "ng lint",
     "e2e": "ng e2e"
 
+
+    ng add @angular/material
+
+
 ```
