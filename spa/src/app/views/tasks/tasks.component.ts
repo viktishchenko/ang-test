@@ -36,11 +36,6 @@ export class MyCustomPaginatorIntl implements MatPaginatorIntl {
   styleUrls: ['./tasks.component.scss'],
 })
 export class TasksComponent implements OnInit {
-  @ViewChild(MatPaginator)
-  private paginator!: MatPaginator;
-  @ViewChild(MatSort)
-  private sort!: MatSort;
-
   //init table columns
   displayedColumns: string[] = [
     'color',
@@ -53,8 +48,17 @@ export class TasksComponent implements OnInit {
 
   dataSource!: MatTableDataSource<ITask>;
 
-  @Input()
+  @ViewChild(MatPaginator)
+  private paginator!: MatPaginator;
+  @ViewChild(MatSort)
+  private sort!: MatSort;
+
+  @Input('tasks')
   tasks: ITask[] = [];
+  set setTasks(tasks: ITask[]) {
+    this.tasks = tasks;
+    this.fillTable();
+  }
 
   constructor(private dataHandler: DataService) {}
 
@@ -70,9 +74,9 @@ export class TasksComponent implements OnInit {
   //   this.addTableObjects();
   // }
 
-  toggleClassCompleted(task: ITask) {
-    task.completed = !task.completed;
-  }
+  // toggleClassCompleted(task: ITask) {
+  //   task.completed = !task.completed;
+  // }
 
   // return color depend on task status
   getPriorityColor(task: ITask) {
@@ -93,6 +97,9 @@ export class TasksComponent implements OnInit {
 
   // show current conditions =(category, search, filters,etc.)
   private fillTable() {
+    if (!this.dataSource) {
+      return;
+    }
     this.dataSource!.data = this.tasks; // upd data source
 
     this.addTableObjects();

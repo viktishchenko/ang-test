@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   tasks: ITask[] = [];
   categories: ICategory[] = [];
 
+  selectedCategory: ICategory | undefined;
+
   constructor(private dataHandler: DataService) {}
 
   ngOnInit() {
@@ -23,4 +25,6 @@ export class AppComponent implements OnInit {
       .getAllCategories()
       .subscribe((categories) => (this.categories = categories));
   }
+
+  onSelectCategory(category: ICategory) {}
 }

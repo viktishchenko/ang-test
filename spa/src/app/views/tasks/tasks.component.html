@@ -3,7 +3,7 @@
     <h4 class="card-title">Барона Карла Фридриха Иеронима фон Мюнхгаузена:</h4>
   </div>
   <div
-    *ngIf="tasks.length > 0; else elseBlock"
+    *ngIf="tasks && tasks.length > 0; else elseBlock"
     class="card-body table-responsive"
   >
     <table [dataSource]="dataSource" mat-table matSort>
