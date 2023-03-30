@@ -1,0 +1,11 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular Fundamentals",
+      "description": "Learn the fundamentals of Angular",
+      "percentComplete": 36,
+      "favorite": true
+    }
+  ]
+}
