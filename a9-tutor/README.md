@@ -55,5 +55,13 @@ npm i concurrently
 
     ng add @angular/material
 
-
 ```
+
+- [Angular style guide](https://angular.io/guide/styleguide)
+- [Angular API](https://angular.io/api)
+
+---
+
+## init view
+
+![Alt text](src/assets/readmeAssets/app-view.png)
