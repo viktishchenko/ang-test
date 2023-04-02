@@ -28,7 +28,18 @@ export class CoursesComponent implements OnInit {
     },
   ];
 
+  itemCourse = null;
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectCourse(cource: any) {
+    console.log(`halo ${cource.title}`);
+    this.itemCourse = cource;
+  }
+
+  deleteCource(courceId: any) {
+    console.log('CORCE DELETED!', courceId);
+    // return this.courses.filter((cource) => cource.id !== courceId);
+  }
 }
