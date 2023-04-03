@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface ISelectedCourse {
-  id: number;
-  title: string;
-  description: string;
-  percentComplete: number;
-  favorite: boolean;
-}
+import { CoursesService } from '../services/courses.service';
+import { ISelectedCourse } from '../models/courses';
 
 @Component({
   selector: 'app-courses',
@@ -14,29 +8,7 @@ export interface ISelectedCourse {
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  courses = [
-    {
-      id: 1,
-      title: 'Angular Fundamentals',
-      description: 'Learn the fundamentals of Angular',
-      percentComplete: 26,
-      favorite: true,
-    },
-    {
-      id: 2,
-      title: 'JavaScript The Really REALLY HARD PARTS',
-      description: 'Worship Will Sentance',
-      percentComplete: 50,
-      favorite: true,
-    },
-    {
-      id: 3,
-      title: 'JavaScript The Easy Part',
-      description: 'Fundamentals part',
-      percentComplete: 20,
-      favorite: false,
-    },
-  ];
+  courses: ISelectedCourse[] = [];
 
   selectedCourse: ISelectedCourse = {
     id: 0,
@@ -46,9 +18,11 @@ export class CoursesComponent implements OnInit {
     favorite: false,
   };
 
-  constructor() {}
+  constructor(private courseService: CoursesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.courses = this.courseService.courses;
+  }
 
   selectCourse(course: ISelectedCourse) {
     console.log(`select btn ${course.title}`);
