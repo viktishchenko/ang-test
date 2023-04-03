@@ -7,16 +7,16 @@
       <mat-card-content>
         <mat-list>
           <mat-list-item
-            *ngFor="let cource of courses"
-            (click)="selectCourse(cource)"
+            *ngFor="let course of courses"
+            (click)="selectCourse(course)"
             role="listitem"
           >
-            <span matListItemTitle>{{ cource.title }}</span>
-            <span matListItemLine>{{ cource.description }}</span>
+            <span matListItemTitle>{{ course.title }}</span>
+            <span matListItemLine>{{ course.description }}</span>
 
             <button
               (click)="
-                deleteCource(cource.id); $event.stopImmediatePropagation()
+                deleteCourse(course.id); $event.stopImmediatePropagation()
               "
               style="margin-top: 10px"
               color="accent"
@@ -38,13 +38,42 @@
       <mat-card-header>
         <mat-card-title> Select Course </mat-card-title>
       </mat-card-header>
-      <mat-card-content *ngIf="itemCourse">
-        {{ itemCourse | json }}
+      <form #form="ngForm">
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input
+              #firstField
+              [(ngModel)]="selectedCourse.title"
+              required
+              matInput
+              placeholder="Title"
+              type="text"
+              name="title"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input
+              [(ngModel)]="selectedCourse.description"
+              matInput
+              placeholder="Description"
+              type="text"
+              name="description"
+            />
+          </mat-form-field>
+        </mat-card-content>
         <!-- COURSE FORM -->
+        <mat-card-actions>
+          <button type="button" mat-button (click)="cancel()">Cancel</button>
+          <!-- COURSE ACTIONS -->
+        </mat-card-actions>
+      </form>
+      <mat-card-content>
+        <pre>{{ form.value | json }}</pre>
+        <pre>{{ form.valid | json }}</pre>
+        <pre>{{ firstField.value | json }}</pre>
       </mat-card-content>
-      <mat-card-actions>
-        <!-- COURSE ACTIONS -->
-      </mat-card-actions>
     </mat-card>
   </div>
 </div>

@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface ISelectedCourse {
+  id: number;
+  title: string;
+  description: string;
+  percentComplete: number;
+  favorite: boolean;
+}
+
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  // CHALLENGE
-  // STEP 01: Display courses using ngFor
-  // STEP 02: Add event handler to select course
-  // STEP 03: Display raw json of selected course
-
   courses = [
     {
       id: 1,
@@ -28,18 +31,36 @@ export class CoursesComponent implements OnInit {
     },
   ];
 
-  itemCourse = null;
+  selectedCourse: ISelectedCourse = {
+    id: 0,
+    title: '',
+    description: '',
+    percentComplete: 0,
+    favorite: false,
+  };
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  selectCourse(cource: any) {
-    console.log(`halo ${cource.title}`);
-    this.itemCourse = cource;
+  selectCourse(course: ISelectedCourse) {
+    console.log(`halo ${course.title}`);
+    this.selectedCourse = course;
   }
 
-  deleteCource(courceId: any) {
-    console.log('CORCE DELETED!', courceId);
+  deleteCourse(courseId: number) {
+    console.log('COURSE DELETED!', courseId);
     // return this.courses.filter((cource) => cource.id !== courceId);
+  }
+
+  cancel() {
+    const empty = {
+      id: 0,
+      title: '',
+      description: '',
+      percentComplete: 0,
+      favorite: false,
+    };
+    this.selectedCourse = empty;
   }
 }
