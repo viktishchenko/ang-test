@@ -5,9 +5,7 @@ import { ISelectedCourse } from '../models/courses';
   providedIn: 'root',
 })
 export class CoursesService {
-  constructor() {}
-
-  courses: ISelectedCourse[] = [
+  private courses: ISelectedCourse[] = [
     {
       id: 1,
       title: 'Angular Fundamentals',
@@ -30,4 +28,24 @@ export class CoursesService {
       favorite: false,
     },
   ];
+
+  constructor() {}
+
+  all() {
+    return this.courses;
+  }
+
+  find(courseId: number) {}
+
+  create(course: ISelectedCourse) {
+    console.log('CREATE COURSE', course);
+  }
+
+  update(course: ISelectedCourse) {
+    console.log('UPDATE COURSE', course);
+  }
+
+  delete(courseId: number) {
+    console.log('DELETE COURSE', courseId);
+  }
 }

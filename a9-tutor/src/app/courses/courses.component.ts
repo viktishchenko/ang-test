@@ -21,7 +21,7 @@ export class CoursesComponent implements OnInit {
   constructor(private courseService: CoursesService) {}
 
   ngOnInit(): void {
-    this.courses = this.courseService.courses;
+    this.courses = this.courseService.all();
   }
 
   selectCourse(course: ISelectedCourse) {
@@ -29,13 +29,15 @@ export class CoursesComponent implements OnInit {
     this.selectedCourse = course;
   }
 
-  saveCourse() {
-    console.log('COURSE WAS SAVED!');
+  saveCourse(course: ISelectedCourse) {
+    if (course.id === 0) {
+      return this.courseService.create(course);
+    }
+    this.courseService.update(course);
   }
 
   deleteCourse(courseId: number) {
-    console.log('COURSE DELETED!', courseId);
-    // return this.courses.filter((cource) => cource.id !== courceId);
+    this.courseService.delete(courseId);
   }
 
   cancel() {
