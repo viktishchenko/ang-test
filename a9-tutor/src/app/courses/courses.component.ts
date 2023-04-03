@@ -29,6 +29,13 @@ export class CoursesComponent implements OnInit {
       percentComplete: 50,
       favorite: true,
     },
+    {
+      id: 3,
+      title: 'JavaScript The Easy Part',
+      description: 'Fundamentals part',
+      percentComplete: 20,
+      favorite: false,
+    },
   ];
 
   selectedCourse: ISelectedCourse = {
@@ -67,5 +74,9 @@ export class CoursesComponent implements OnInit {
     };
     console.log('cancel btn');
     this.selectedCourse = empty;
+  }
+
+  checkFavorite() {
+    console.log('isFavotite');
   }
 }

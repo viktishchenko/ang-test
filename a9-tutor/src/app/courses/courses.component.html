@@ -62,6 +62,23 @@
               name="description"
             />
           </mat-form-field>
+          <mat-checkbox
+            name="favorite"
+            [(ngModel)]="selectedCourse.favorite"
+            (change)="checkFavorite()"
+            #checker
+            [checked]="selectedCourse.favorite"
+            class="example-margin"
+            >{{ checker.checked ? "favorite" : "not favorite" }}</mat-checkbox
+          ><br />
+          <mat-slider min="1" max="100" step="1"
+            ><input
+              name="percentComplete"
+              matSliderThumb
+              [(ngModel)]="selectedCourse.percentComplete"
+            />
+          </mat-slider>
+          {{ selectedCourse.percentComplete }}
         </mat-card-content>
         <!-- COURSE FORM -->
         <mat-card-actions>
@@ -79,8 +96,7 @@
       </form>
       <mat-card-content>
         <pre>{{ form.value | json }}</pre>
-        <pre>{{ form.valid | json }}</pre>
-        <pre>{{ firstField.value | json }}</pre>
+        <pre>Valid: {{ form.valid | json }}</pre>
       </mat-card-content>
     </mat-card>
   </div>
