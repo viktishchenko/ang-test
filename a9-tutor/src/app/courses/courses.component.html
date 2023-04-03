@@ -38,7 +38,7 @@
       <mat-card-header>
         <mat-card-title> Select Course </mat-card-title>
       </mat-card-header>
-      <form #form="ngForm">
+      <form #form="ngForm" (submit)="saveCourse()">
         <mat-card-content>
           <mat-form-field>
             <mat-label>Title</mat-label>
@@ -65,6 +65,14 @@
         </mat-card-content>
         <!-- COURSE FORM -->
         <mat-card-actions>
+          <button
+            [disabled]="form.invalid"
+            type="submit"
+            color="primary"
+            mat-button
+          >
+            Submit
+          </button>
           <button type="button" mat-button (click)="cancel()">Cancel</button>
           <!-- COURSE ACTIONS -->
         </mat-card-actions>

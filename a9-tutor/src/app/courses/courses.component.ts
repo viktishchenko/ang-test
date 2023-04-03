@@ -44,8 +44,12 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {}
 
   selectCourse(course: ISelectedCourse) {
-    console.log(`halo ${course.title}`);
+    console.log(`select btn ${course.title}`);
     this.selectedCourse = course;
+  }
+
+  saveCourse() {
+    console.log('COURSE WAS SAVED!');
   }
 
   deleteCourse(courseId: number) {
@@ -61,6 +65,7 @@ export class CoursesComponent implements OnInit {
       percentComplete: 0,
       favorite: false,
     };
+    console.log('cancel btn');
     this.selectedCourse = empty;
   }
 }
