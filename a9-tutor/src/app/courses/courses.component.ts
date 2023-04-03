@@ -75,8 +75,4 @@ export class CoursesComponent implements OnInit {
     console.log('cancel btn');
     this.selectedCourse = empty;
   }
-
-  checkFavorite() {
-    console.log('isFavotite');
-  }
 }
