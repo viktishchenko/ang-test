@@ -1,19 +1,19 @@
 <mat-card>
   <mat-card-header>
-    <span *ngIf="selected.id; else elseBlock">
-      <mat-card-title> {{ selected.title }}</mat-card-title>
+    <span *ngIf="pickedCourse.id; else elseBlock">
+      <mat-card-title> {{ pickedCourseTitle }}</mat-card-title>
     </span>
     <ng-template #elseBlock>
       <mat-card-title> Select Course or Add New </mat-card-title>
     </ng-template>
   </mat-card-header>
-  <form #form="ngForm" (submit)="save.emit(selected)">
+  <form #form="ngForm" (submit)="save.emit(pickedCourse)">
     <mat-card-content>
       <mat-form-field>
         <mat-label>Title</mat-label>
         <input
           #firstField
-          [(ngModel)]="selected.title"
+          [(ngModel)]="pickedCourse.title"
           required
           matInput
           placeholder="Title"
@@ -24,7 +24,7 @@
       <mat-form-field>
         <mat-label>Description</mat-label>
         <input
-          [(ngModel)]="selected.description"
+          [(ngModel)]="pickedCourse.description"
           matInput
           placeholder="Description"
           type="text"
@@ -33,9 +33,9 @@
       </mat-form-field>
       <mat-checkbox
         name="favorite"
-        [(ngModel)]="selected.favorite"
+        [(ngModel)]="pickedCourse.favorite"
         #checker
-        [checked]="selected.favorite"
+        [checked]="pickedCourse.favorite"
         class="example-margin"
         >{{ checker.checked ? "favorite" : "not favorite" }}</mat-checkbox
       ><br />
@@ -43,10 +43,10 @@
         ><input
           name="percentComplete"
           matSliderThumb
-          [(ngModel)]="selected.percentComplete"
+          [(ngModel)]="pickedCourse.percentComplete"
         />
       </mat-slider>
-      {{ selected.percentComplete }}
+      {{ pickedCourse.percentComplete }}
     </mat-card-content>
     <mat-card-actions>
       <button
