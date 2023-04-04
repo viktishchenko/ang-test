@@ -1,6 +1,10 @@
 <div class="courses-containers">
   <div class="courses-list">
-    <app-courses-list [courses]="courses"></app-courses-list>
+    <app-courses-list
+      [courses]="courses"
+      (selected)="selectCourse($event)"
+      (deleted)="deleteCourse($event)"
+    ></app-courses-list>
   </div>
 
   <div class="course-details">

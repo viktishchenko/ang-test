@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ISelectedCourse } from 'src/app/models/courses';
 
 @Component({
@@ -9,4 +9,6 @@ import { ISelectedCourse } from 'src/app/models/courses';
 export class CoursesListComponent {
   @Input()
   courses!: ISelectedCourse[];
+  @Output() selected = new EventEmitter();
+  @Output() deleted = new EventEmitter();
 }
