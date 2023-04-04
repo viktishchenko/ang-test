@@ -40,7 +40,7 @@
           <mat-card-title> {{ selectedCourse.title }}</mat-card-title>
         </span>
         <ng-template #elseBlock>
-          <mat-card-title> Select Course </mat-card-title>
+          <mat-card-title> Select Course or Add New </mat-card-title>
         </ng-template>
       </mat-card-header>
       <form #form="ngForm" (submit)="saveCourse(selectedCourse)">

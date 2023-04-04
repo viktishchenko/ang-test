@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ILessons } from '../models/lessons';
-import { LessonsService } from '../services/lessons/lessons.service';
+import { ILessons } from '../../models/lessons';
+import { LessonsService } from '../../services/lessons/lessons.service';
 
 @Component({
   selector: 'app-home',
