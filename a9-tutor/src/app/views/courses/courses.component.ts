@@ -21,7 +21,11 @@ export class CoursesComponent implements OnInit {
   constructor(private courseService: CoursesService) {}
 
   ngOnInit(): void {
-    this.courses = this.courseService.all();
+    this.loadCourses();
+  }
+
+  loadCourses() {
+    this.courseService.all().subscribe((courses) => (this.courses = courses));
   }
 
   selectCourse(course: ISelectedCourse) {

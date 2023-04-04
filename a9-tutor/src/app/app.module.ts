@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { CoursesService } from './services/courses/courses.service';
 import { LessonsService } from './services/lessons/lessons.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CoursesComponent],
@@ -19,6 +20,7 @@ import { LessonsService } from './services/lessons/lessons.service';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [CoursesService, LessonsService],
   bootstrap: [AppComponent],

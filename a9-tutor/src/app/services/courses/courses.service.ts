@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ISelectedCourse } from '../../models/courses';
+import { HttpClient } from '@angular/common/http';
+
+const BASE_URL = 'http://localhost:3000/';
 
 @Injectable({
   providedIn: 'root',
@@ -29,10 +32,12 @@ export class CoursesService {
     },
   ];
 
-  constructor() {}
+  private model = 'courses';
+
+  constructor(private http: HttpClient) {}
 
   all() {
-    return this.courses;
+    return this.http.get<ISelectedCourse[]>(`${BASE_URL}${this.model}`);
   }
 
   find(courseId: number) {}
