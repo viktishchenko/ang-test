@@ -35,13 +35,18 @@ export class CoursesComponent implements OnInit {
 
   saveCourse(course: ISelectedCourse) {
     if (course.id === 0) {
-      return this.courseService.create(course);
+      return this.courseService
+        .create(course)
+        .subscribe((result) => this.loadCourses());
+    } else {
+      return this.courseService
+        .update(course)
+        .subscribe((res) => this.loadCourses());
     }
-    this.courseService.update(course);
   }
 
   deleteCourse(courseId: number) {
-    this.courseService.delete(courseId);
+    this.courseService.delete(courseId).subscribe((res) => this.loadCourses());
   }
 
   cancel() {
