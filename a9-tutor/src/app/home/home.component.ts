@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ILessons } from '../models/lessons';
+import { LessonsService } from '../services/lessons/lessons.service';
 
 @Component({
   selector: 'app-home',
@@ -9,20 +11,13 @@ export class HomeComponent implements OnInit {
   title = 'Hello Workshop';
   currentLesson = null;
 
-  courseLessons = [
-    { title: 'Hello Angular' },
-    { title: 'Component Fundamentals' },
-    { title: 'Template Driven Forms' },
-    { title: 'Angular Services' },
-    { title: 'Server Communication' },
-    { title: 'Component Driven Architecture' },
-    { title: 'Angular Routing' },
-    { title: 'Unit Testing Fundamentals' },
-  ];
+  courseLessons: ILessons[] = [];
 
-  constructor() {}
+  constructor(private lessonsService: LessonsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.courseLessons = this.lessonsService.allLessons();
+  }
 
   selectLesson(lesson: any) {
     console.log('SELECT LESSON FIRED!', lesson);
