@@ -13,13 +13,6 @@
       "description": "Fundamental course (upd version)",
       "percentComplete": 50,
       "favorite": true
-    },
-    {
-      "id": 3,
-      "title": "new Course Total",
-      "description": "Fundamental course 22",
-      "percentComplete": 41,
-      "favorite": true
     }
   ]
 }
