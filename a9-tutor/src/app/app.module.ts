@@ -11,9 +11,17 @@ import { FormsModule } from '@angular/forms';
 import { CoursesService } from './services/courses/courses.service';
 import { LessonsService } from './services/lessons/lessons.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CourseDetailsComponent } from './views/course-details/course-details.component';
+import { CoursesListComponent } from './views/courses-list/courses-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CoursesComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CoursesComponent,
+    CourseDetailsComponent,
+    CoursesListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
