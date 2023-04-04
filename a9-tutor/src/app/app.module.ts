@@ -13,6 +13,7 @@ import { LessonsService } from './services/lessons/lessons.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailsComponent } from './views/course-details/course-details.component';
 import { CoursesListComponent } from './views/courses-list/courses-list.component';
+import { LessonsListComponent } from './views/lessons-list/lessons-list.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CoursesListComponent } from './views/courses-list/courses-list.componen
     CoursesComponent,
     CourseDetailsComponent,
     CoursesListComponent,
+    LessonsListComponent,
   ],
   imports: [
     BrowserModule,
