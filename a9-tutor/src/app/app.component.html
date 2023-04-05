@@ -16,10 +16,20 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over" opened="false" class="app-sidenav">
-    <!-- Sidenav Menu -->
+  <mat-sidenav #sidenav mode="side" opened="true" class="app-sidenav">
+    <nav>
+      <a
+        *ngFor="let link of links"
+        [routerLink]="link.path"
+        routerLinkActive="active-link"
+        mat-button
+        class="nav-link"
+      >
+        <mat-icon style="color: rgb(168, 168, 168)">{{ link.icon }}</mat-icon>
+        {{ link.title }}
+      </a>
+    </nav>
   </mat-sidenav>
-
   <div class="container">
     <router-outlet></router-outlet>
   </div>

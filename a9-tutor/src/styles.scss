@@ -191,11 +191,10 @@ mat-card-actions {
 }
 
 .nav-link {
-  color: rgba(0, 0, 0, 0.54);
-  display: flex !important;
-  align-items: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start !important;
+  border-radius: unset !important;
 }
 
 // UI LOGIN
