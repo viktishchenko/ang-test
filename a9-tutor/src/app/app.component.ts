@@ -11,6 +11,7 @@ export class AppComponent {
   links = [
     { path: '/home', icon: 'home', title: 'Home' },
     { path: '/courses', icon: 'view_list', title: 'Courses' },
+    { path: '/user', icon: 'person', title: 'User' },
   ];
 
   constructor(private route: Router) {}
