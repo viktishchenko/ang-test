@@ -65,3 +65,22 @@ npm i concurrently
 ## init view
 
 ![Alt text](src/assets/readmeAssets/app-view.png)
+
+---
+
+## Lazy-loading route
+
+![Alt text](src/assets/readmeAssets/child-route.png)
+
+[more info about →](https://angular.io/guide/lazy-loading-ngmodules)
+
+```javascript
+
+ng generate module login --route login --module app.module
+// OR THE SAME
+ng g m login --routing
+// res → login/login-routing.module.ts & login/login.module.ts
+ng g c login
+// res → login/login.component/html/scss/spec.ts/ts
+
+```
