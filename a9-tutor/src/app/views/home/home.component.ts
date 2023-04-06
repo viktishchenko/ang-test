@@ -9,7 +9,7 @@ import { LessonsService } from '../../services/lessons/lessons.service';
 })
 export class HomeComponent implements OnInit {
   title = 'Hello Workshop';
-  currentLesson = null;
+  currentLesson: string = '';
 
   courseLessons: ILessons[] = [];
 
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       .subscribe((courseLessons) => (this.courseLessons = courseLessons));
   }
 
-  selectLesson(lesson: any) {
+  selectLesson(lesson: string) {
     console.log('SELECT LESSON FIRED!', lesson);
     this.currentLesson = lesson;
   }

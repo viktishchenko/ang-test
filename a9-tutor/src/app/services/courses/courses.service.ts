@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ISelectedCourse } from '../../models/courses';
-import { HttpClient } from '@angular/common/http';
-
-const BASE_URL = 'http://localhost:3000/';
+import { Observable, of } from 'rxjs';
+import { courses } from 'src/app/data/appData';
 
 @Injectable({
   providedIn: 'root',
@@ -10,32 +9,23 @@ const BASE_URL = 'http://localhost:3000/';
 export class CoursesService {
   private model = 'courses';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  all() {
-    return this.http.get<ISelectedCourse[]>(this.getUrl());
+  all(): Observable<ISelectedCourse[]> {
+    return of(courses);
   }
 
   find(courseId: number) {}
 
   create(course: ISelectedCourse) {
-    return this.http.post<ISelectedCourse>(this.getUrl(), course);
+    console.log('CREATE COURSE');
   }
 
   update(course: ISelectedCourse) {
     console.log('UPDATE COURSE', course);
-    return this.http.put<ISelectedCourse>(
-      `${this.getUrl()}${course.id}`,
-      course
-    );
   }
 
   delete(courseId: number) {
     console.log('COURSE DELITED', courseId);
-    return this.http.delete(`${this.getUrl()}${courseId}`);
-  }
-
-  private getUrl() {
-    return `${BASE_URL}${this.model}/`;
   }
 }
