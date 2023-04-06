@@ -13,10 +13,12 @@ export class HomeComponent implements OnInit {
 
   courseLessons: ILessons[] = [];
 
-  constructor(private lessonsService: LessonsService) {}
+  constructor(private lessons: LessonsService) {}
 
   ngOnInit(): void {
-    this.courseLessons = this.lessonsService.allLessons();
+    this.lessons
+      .getLessons()
+      .subscribe((courseLessons) => (this.courseLessons = courseLessons));
   }
 
   selectLesson(lesson: any) {
