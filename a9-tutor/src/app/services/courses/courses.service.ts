@@ -3,12 +3,6 @@ import { ISelectedCourse } from '../../models/courses';
 import { Observable, of } from 'rxjs';
 import { courses } from 'src/app/data/appData';
 
-// const storageName: string = 'coursesArray';
-// const coursesJSON = localStorage.getItem(storageName);
-// let coursesStorage: ISelectedCourse[] = coursesJSON
-//   ? JSON.parse(coursesJSON)
-//   : courses;
-
 @Injectable({
   providedIn: 'root',
 })
@@ -28,7 +22,6 @@ export class CoursesService {
   find(courseId: number) {}
 
   create(course: ISelectedCourse) {
-    console.log('CREATE COURSE', course);
     course.id = this.generateId();
     this.coursesStorage.push(course);
     localStorage.setItem(this.storageName, JSON.stringify(this.coursesStorage));
@@ -42,11 +35,9 @@ export class CoursesService {
   }
 
   delete(courseId: number) {
-    console.log('COURSE DELITED', courseId);
     this.coursesStorage = this.coursesStorage.filter(
       (el) => el.id !== courseId
     );
-    console.log('coursesStorage', this.coursesStorage);
     localStorage.setItem(this.storageName, JSON.stringify(this.coursesStorage));
   }
 
@@ -54,5 +45,12 @@ export class CoursesService {
     return this.coursesStorage.length
       ? Math.max(...this.coursesStorage.map((c) => c.id)) + 1
       : 1;
+  }
+
+  reset() {
+    console.log('RESET');
+    localStorage.removeItem(this.storageName);
+    localStorage.clear();
+    location.reload();
   }
 }

@@ -12,6 +12,7 @@ export class CourseDetailsComponent {
 
   @Output() save = new EventEmitter();
   @Output() clear = new EventEmitter();
+  @Output() reset = new EventEmitter();
 
   @Input() set selected(course: ISelectedCourse) {
     if (course) {

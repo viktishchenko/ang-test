@@ -60,6 +60,16 @@
       <button type="button" mat-raised-button (click)="clear.emit()">
         Cancel
       </button>
+      <button
+        title="Clear local storage, reload page"
+        style="margin: 0 1rem 0 auto"
+        color="warn"
+        type="button"
+        mat-raised-button
+        (click)="reset.emit()"
+      >
+        Reset
+      </button>
     </mat-card-actions>
   </form>
   <mat-card-content>

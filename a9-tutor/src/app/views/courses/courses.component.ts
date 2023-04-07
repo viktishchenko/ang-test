@@ -29,7 +29,6 @@ export class CoursesComponent implements OnInit {
   }
 
   selectCourse(course: ISelectedCourse) {
-    console.log(`select btn ${course.title}`);
     this.selectedCourse = course;
   }
 
@@ -46,7 +45,7 @@ export class CoursesComponent implements OnInit {
   }
 
   deleteCourse(courseId: number) {
-    console.log('delete', courseId);
+    console.log('DELETE', courseId);
     this.courseService.delete(courseId);
     return this.refreshCourses();
   }
@@ -64,7 +63,11 @@ export class CoursesComponent implements OnInit {
       percentComplete: 0,
       favorite: false,
     };
-    console.log('cancel btn');
     this.selectedCourse = empty;
+  }
+
+  clearAll() {
+    this.courseService.reset();
+    return this.refreshCourses();
   }
 }

@@ -5,7 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 import { UserComponent } from './views/user/user.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'user', component: UserComponent },
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginModule),
   },
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
