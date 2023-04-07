@@ -36,7 +36,8 @@ export class CoursesComponent implements OnInit {
   saveCourse(course: ISelectedCourse) {
     if (course.id === 0) {
       console.log('SAVE');
-      return this.courseService.create(course);
+      this.courseService.create(course);
+      return this.refreshCourses();
     } else {
       console.log('UPDATE');
       return this.courseService.update(course);
