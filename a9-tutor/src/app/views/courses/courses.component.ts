@@ -48,6 +48,7 @@ export class CoursesComponent implements OnInit {
   deleteCourse(courseId: number) {
     console.log('delete', courseId);
     this.courseService.delete(courseId);
+    return this.refreshCourses();
   }
 
   refreshCourses() {

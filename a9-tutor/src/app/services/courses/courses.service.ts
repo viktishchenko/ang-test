@@ -43,9 +43,16 @@ export class CoursesService {
 
   delete(courseId: number) {
     console.log('COURSE DELITED', courseId);
+    this.coursesStorage = this.coursesStorage.filter(
+      (el) => el.id !== courseId
+    );
+    console.log('coursesStorage', this.coursesStorage);
+    localStorage.setItem(this.storageName, JSON.stringify(this.coursesStorage));
   }
 
   generateId() {
-    return courses.length > 0 ? Math.max(...courses.map((c) => c.id)) + 1 : 1;
+    return this.coursesStorage.length
+      ? Math.max(...this.coursesStorage.map((c) => c.id)) + 1
+      : 1;
   }
 }
