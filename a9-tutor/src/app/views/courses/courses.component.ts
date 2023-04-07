@@ -40,7 +40,8 @@ export class CoursesComponent implements OnInit {
       return this.refreshCourses();
     } else {
       console.log('UPDATE');
-      return this.courseService.update(course);
+      this.courseService.update(course);
+      return this.refreshCourses();
     }
   }
 

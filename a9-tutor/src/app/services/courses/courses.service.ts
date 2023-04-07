@@ -22,7 +22,6 @@ export class CoursesService {
     : courses;
 
   all(): Observable<ISelectedCourse[]> {
-    console.log('coursesStorage', this.coursesStorage);
     return of(this.coursesStorage);
   }
 
@@ -33,11 +32,13 @@ export class CoursesService {
     course.id = this.generateId();
     this.coursesStorage.push(course);
     localStorage.setItem(this.storageName, JSON.stringify(this.coursesStorage));
-    console.log('coursesStorage', this.coursesStorage);
   }
 
   update(course: ISelectedCourse) {
-    console.log('UPDATE COURSE', course);
+    this.coursesStorage.find((el, idx) => {
+      if (el.id === course.id) this.coursesStorage[idx] = course;
+    });
+    localStorage.setItem(this.storageName, JSON.stringify(this.coursesStorage));
   }
 
   delete(courseId: number) {
