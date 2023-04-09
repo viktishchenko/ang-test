@@ -15,6 +15,7 @@ import { CourseDetailsComponent } from './views/course-details/course-details.co
 import { CoursesListComponent } from './views/courses-list/courses-list.component';
 import { LessonsListComponent } from './views/lessons-list/lessons-list.component';
 import { UserComponent } from './views/user/user.component';
+import { LinksService } from './services/links/links.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { UserComponent } from './views/user/user.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [CoursesService, LessonsService],
+  providers: [CoursesService, LessonsService, LinksService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

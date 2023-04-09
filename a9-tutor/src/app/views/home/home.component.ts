@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   selectLesson(lesson: string) {
-    console.log('SELECT LESSON FIRED!', lesson);
+    console.log('SELECTED LESSON!', lesson);
     this.currentLesson = lesson;
   }
 }
