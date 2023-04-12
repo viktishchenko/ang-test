@@ -85,4 +85,8 @@ git push -u origin <new branch>
 $ npm i -g @nestjs/cli
 $ nest new project-name
 
+New-Item .env
+
+npm i --save @nestjs/config
+
 ```
