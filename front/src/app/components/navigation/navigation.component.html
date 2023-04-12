@@ -5,7 +5,9 @@
       aria-current="page"
       [routerLink]="link.href"
       routerLinkActive="active"
-      >{{ link.title }}</a
+    >
+      <app-icon [icon]="link.icon"></app-icon>
+      {{ link.title }}</a
     >
   </li>
 </ul>
