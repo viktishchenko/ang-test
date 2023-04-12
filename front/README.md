@@ -38,4 +38,7 @@ cd front
 npm i bootstrap
 npm i bootstrap-icons
 
+ng g c components/navigation
+ng g s services/menu
+
 ```
