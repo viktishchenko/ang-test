@@ -45,4 +45,8 @@ ng g s services/menu
 ng g m components/pages/main --route main --module app.module --dry-run
 ng g m components/pages/users --route users --module app.module --dry-run
 
+
+// add icon module & componet
+ng g m components/icon --dry-run
+ ng g c components/icon -t -s --skip-tests --dry-run
 ```

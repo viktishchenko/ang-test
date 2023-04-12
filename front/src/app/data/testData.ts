@@ -10,6 +10,6 @@ export const menu: IMenu[] = [
     id: 2,
     title: 'Пользователи',
     href: '/users',
-    icon: 'be be-people',
+    icon: 'bi bi-people',
   },
 ];
