@@ -41,4 +41,8 @@ npm i bootstrap-icons
 ng g c components/navigation
 ng g s services/menu
 
+// add lasy components (init with route and all the flowers)
+ng g m components/pages/main --route main --module app.module --dry-run
+ng g m components/pages/users --route users --module app.module --dry-run
+
 ```
