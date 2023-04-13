@@ -50,3 +50,15 @@ ng g m components/pages/users --route users --module app.module --dry-run
 ng g m components/icon --dry-run
  ng g c components/icon -t -s --skip-tests --dry-run
 ```
+
+---
+
+## binding in pictures
+
+![Alt text](src/assets/readmeAssets/data-binding-input.png)
+
+![Alt text](src/assets/readmeAssets/data-binding.png)
+
+![Alt text](src/assets/readmeAssets/data-binding2.png)
+
+![Alt text](src/assets/readmeAssets/data-binding3.png)
