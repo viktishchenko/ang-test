@@ -50,3 +50,7 @@ ng g m components/pages/users --route users --module app.module --dry-run
 ng g m components/icon --dry-run
  ng g c components/icon -t -s --skip-tests --dry-run
 ```
+
+// .alert.alert-info>h1{Главная страница}
+// .row>.col-sm-6\*2
+// .list-group.mb-2>button.btn.btn-outline-primary{Добавить}
