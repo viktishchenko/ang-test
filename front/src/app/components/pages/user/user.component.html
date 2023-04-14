@@ -1,0 +1,21 @@
+<div class="card p-2 card-width">
+  <img [src]="imgSrc" alt="user" class="card-img-top" />
+  <div class="card-body">
+    <h5 class="caed-title">Name</h5>
+    <p class="card-text">Email</p>
+    <div class="row">
+      <div class="col-md-6 mb-2 text-center">
+        <button class="btn btn-outline-danger">
+          <app-icon icon="bi bi-pencil-square"></app-icon>
+          Изменить
+        </button>
+      </div>
+      <div class="col-md-6 text-center">
+        <button class="btn btn-outline-danger">
+          <app-icon icon="bi bi-trash"></app-icon>
+          Удалить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,18 @@
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6 max-width">
     <div class="list-group mb-2">
       <button class="btn btn-outline-primary">
         <app-icon icon="bi bi-plus"></app-icon>
         Добавить
       </button>
     </div>
+    <div class="list-group mb-2">
+      <a class="list-group-item list-group-item-action" [routerLink]="[1]"
+        >Первый</a
+      >
+    </div>
   </div>
-  <div class="col-sm-6"></div>
+  <div class="col-sm-6">
+    <router-outlet></router-outlet>
+  </div>
 </div>

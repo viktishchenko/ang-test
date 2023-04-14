@@ -54,3 +54,4 @@ ng g m components/icon --dry-run
 // .alert.alert-info>h1{Главная страница}
 // .row>.col-sm-6\*2
 // .list-group.mb-2>button.btn.btn-outline-primary{Добавить}
+// .list-group>a.list-group-item.list-group-item-action{Первый}
