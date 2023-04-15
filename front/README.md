@@ -55,3 +55,8 @@ ng g m components/icon --dry-run
 // .row>.col-sm-6\*2
 // .list-group.mb-2>button.btn.btn-outline-primary{Добавить}
 // .list-group>a.list-group-item.list-group-item-action{Первый}
+
+```javascript
+
+ng g s services/users --dry-run
+```

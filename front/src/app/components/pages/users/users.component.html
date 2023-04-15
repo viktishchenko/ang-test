@@ -1,4 +1,5 @@
-<div class="row">
+<!-- automatically subscribes and unsubscribes from Observables as the component gets instantiated or destroyed -->
+<div class="row" *ngIf="users$ | async as users">
   <div class="col-sm-6 max-width">
     <div class="list-group mb-2">
       <button class="btn btn-outline-primary">
@@ -6,10 +7,10 @@
         Добавить
       </button>
     </div>
-    <div class="list-group mb-2">
-      <a class="list-group-item list-group-item-action" [routerLink]="[1]"
-        >Первый</a
-      >
+    <div class="list-group mb-2" *ngFor="let u of users">
+      <a class="list-group-item list-group-item-action" [routerLink]="[u.id]">{{
+        u.name
+      }}</a>
     </div>
   </div>
   <div class="col-sm-6">
