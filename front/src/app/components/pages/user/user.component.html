@@ -3,6 +3,11 @@
   <div class="card-body">
     <h5 class="caed-title">Name</h5>
     <p class="card-text">Email</p>
+    <div class="alert alert-warning">
+      <span class="text-mute">
+        Создан: {{ today | date : "dd.MM.yyyy HH:mm" }}
+      </span>
+    </div>
     <div class="row">
       <div class="col-md-6 mb-2 text-center">
         <button class="btn btn-outline-danger">
