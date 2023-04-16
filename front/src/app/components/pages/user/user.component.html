@@ -1,11 +1,16 @@
-<div class="card p-2 card-width">
+<div class="card p-2 card-width" *ngIf="user$ | async as user; else pickFail">
   <img [src]="imgSrc" alt="user" class="card-img-top" />
   <div class="card-body">
-    <h5 class="caed-title">Name</h5>
-    <p class="card-text">Email</p>
-    <div class="alert alert-warning">
+    <h5 class="caed-title">{{ user.name }}</h5>
+    <p class="card-text">{{ user.email }}</p>
+    <div class="alert alert-warning p-1">
+      <span class="text-mute mb-2">
+        Создан: {{ user.createdAt | date : "dd.MM.yyyy HH:mm" }}
+      </span>
+    </div>
+    <div class="alert alert-warning p-1">
       <span class="text-mute">
-        Создан: {{ today | date : "dd.MM.yyyy HH:mm" }}
+        Изменен: {{ user.updateAt | date : "dd.MM.yyyy HH:mm" }}
       </span>
     </div>
     <div class="row">
@@ -24,3 +29,6 @@
     </div>
   </div>
 </div>
+<ng-template #pickFail>
+  <div>Что-то пошло не так ...</div>
+</ng-template>

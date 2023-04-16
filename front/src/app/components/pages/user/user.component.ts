@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { IUser } from 'src/app/models/user';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user',
@@ -6,11 +10,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
+  // export class UserComponent implements OnInit {
   imgSrc: string =
     'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg';
 
-  today?: Date;
-  constructor() {
-    this.today = new Date();
+  user$?: Observable<IUser>;
+
+  constructor(
+    private usersService: UsersService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.getUser();
+  }
+
+  getUser() {
+    this.route.params.subscribe(({ id }) => {
+      if (id) this.user$ = this.usersService.getCurrentUser(id);
+    });
   }
 }

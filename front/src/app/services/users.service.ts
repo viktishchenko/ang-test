@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import { IUser } from '../models/user';
 import { users } from '../data/testData';
 
@@ -9,7 +9,12 @@ import { users } from '../data/testData';
 export class UsersService {
   constructor() {}
 
-  getUsersData(): Observable<IUser[]> {
+  getUsersList(): Observable<IUser[]> {
     return of(users);
+  }
+
+  getCurrentUser(userId: number): Observable<IUser> {
+    const user = users.filter((u) => u.id == userId)!;
+    return from(user);
   }
 }
