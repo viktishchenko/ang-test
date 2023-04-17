@@ -4,7 +4,8 @@
       class="nav-link"
       aria-current="page"
       [routerLink]="link.href"
-      routerLinkActive="active"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
     >
       <app-icon [icon]="link.icon"></app-icon>
       {{ link.title }}</a
