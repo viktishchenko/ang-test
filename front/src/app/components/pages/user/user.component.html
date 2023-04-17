@@ -5,23 +5,21 @@
     <p class="card-text">{{ user.email }}</p>
     <div class="alert alert-warning p-1">
       <span class="text-mute mb-2">
-        Создан: {{ user.createdAt | date : "dd.MM.yyyy HH:mm" }}
-      </span>
-    </div>
-    <div class="alert alert-warning p-1">
+        Создан: {{ user.createdAt | date : "dd.MM.yyyy HH:mm" }} </span
+      ><br />
       <span class="text-mute">
         Изменен: {{ user.updateAt | date : "dd.MM.yyyy HH:mm" }}
       </span>
     </div>
     <div class="row">
       <div class="col-md-6 mb-2 text-center">
-        <button class="btn btn-outline-danger">
+        <button class="btn btn-outline-danger" (click)="change()">
           <app-icon icon="bi bi-pencil-square"></app-icon>
           Изменить
         </button>
       </div>
       <div class="col-md-6 text-center">
-        <button class="btn btn-outline-danger">
+        <button class="btn btn-outline-danger" (click)="delete(user.id)">
           <app-icon icon="bi bi-trash"></app-icon>
           Удалить
         </button>

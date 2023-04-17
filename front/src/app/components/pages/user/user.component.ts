@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IUser } from 'src/app/models/user';
 import { UsersService } from 'src/app/services/users.service';
@@ -18,7 +18,8 @@ export class UserComponent {
 
   constructor(
     private usersService: UsersService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,5 +30,17 @@ export class UserComponent {
     this.route.params.subscribe(({ id }) => {
       if (id) this.user$ = this.usersService.getCurrentUser(id);
     });
+  }
+
+  delete(userId: number) {
+    if (confirm('Удалить пользователя?')) {
+      this.usersService.deleteUser(userId).subscribe({
+        complete: () => this.router.navigate(['/users']),
+      });
+    }
+  }
+
+  change() {
+    throw new Error('Method not implemented.');
   }
 }

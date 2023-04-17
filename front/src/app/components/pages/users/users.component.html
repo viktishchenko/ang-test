@@ -12,9 +12,12 @@
       </button>
     </div>
     <div class="list-group mb-2" *ngFor="let u of users">
-      <a class="list-group-item list-group-item-action" [routerLink]="[u.id]">{{
-        u.name
-      }}</a>
+      <a
+        class="list-group-item list-group-item-action"
+        routerLinkActive="active-link"
+        [routerLink]="[u.id]"
+        >{{ u.name }}</a
+      >
     </div>
   </div>
   <div class="col-sm-6">

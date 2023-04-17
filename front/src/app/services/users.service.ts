@@ -17,4 +17,9 @@ export class UsersService {
     const user = users.filter((u) => u.id == userId)!;
     return from(user);
   }
+  deleteUser(userId: number): Observable<IUser> {
+    const user = users.filter((u) => u.id != userId)!;
+    console.log('DELETE-USER>>', user, userId);
+    return from(user);
+  }
 }
