@@ -35,6 +35,9 @@ import { IUser } from 'src/app/models/user';
   `,
   styles: [
     `
+      form {
+        max-width: 21.5rem;
+      }
       input.ng-invalid.ng-touched {
         border: red 1px solid;
         box-shadow: 0 0 0 0.25rem rgba(237, 31, 31, 0.25);

@@ -26,6 +26,12 @@ export class UsersService {
 
   createUser(user: IUser): Observable<IUser> {
     console.log('CREATE-USER>>', user);
+    const id = 123;
+    if (user) user.id = this.generateId();
     return of(user);
+  }
+
+  generateId() {
+    return users.length ? Math.max(...users.map((u) => u.id)) + 1 : 1;
   }
 }

@@ -6,7 +6,7 @@
 <div class="row" *ngIf="users$ | async as users">
   <div class="col-sm-6 max-width">
     <div class="list-group mb-2">
-      <button class="btn btn-outline-primary">
+      <button class="btn btn-outline-primary" (click)="isNewUserTrigger()">
         <app-icon icon="bi bi-plus"></app-icon>
         Добавить
       </button>
@@ -24,7 +24,7 @@
     <ng-container *ngIf="!isNewUser">
       <router-outlet></router-outlet>
     </ng-container>
-    <ng-container>
+    <ng-container *ngIf="isNewUser">
       <app-user-form (onSubmit)="Submit($event)"></app-user-form>
     </ng-container>
   </div>
