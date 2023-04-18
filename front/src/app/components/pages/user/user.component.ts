@@ -9,8 +9,8 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
-export class UserComponent {
-  // export class UserComponent implements OnInit {
+// export class UserComponent {
+export class UserComponent implements OnInit {
   imgSrc: string =
     'https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg';
 

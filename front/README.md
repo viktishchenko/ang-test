@@ -59,4 +59,15 @@ ng g m components/icon --dry-run
 ```javascript
 
 ng g s services/users --dry-run
+
+ng g m components/user-form --module app.module
+ng g c components/user-form -t -s --skip-tests --dry-run
+```
+
+### Emmet Abbreviations Syntax
+
+[e.g. more here](https://docs.emmet.io/abbreviations/syntax/)
+
+```javascript
+.mb-3>label.form-label+input.input-control
 ```
