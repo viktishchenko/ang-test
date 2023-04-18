@@ -21,6 +21,11 @@
     </div>
   </div>
   <div class="col-sm-6">
-    <router-outlet></router-outlet>
+    <ng-container *ngIf="!isNewUser">
+      <router-outlet></router-outlet>
+    </ng-container>
+    <ng-container>
+      <app-user-form (onSubmit)="Submit($event)"></app-user-form>
+    </ng-container>
   </div>
 </div>

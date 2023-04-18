@@ -26,13 +26,25 @@ import { IUser } from 'src/app/models/user';
       </div>
       <button
         [disabled]="form.invalid"
-        class="btn btn-primary"
+        class="{{ form.invalid ? 'btn btn-secondry' : 'btn btn-primary' }}"
         (click)="submit()"
       >
         {{ btnTitle }}
       </button>
     </form>
   `,
+  styles: [
+    `
+      input.ng-invalid.ng-touched {
+        border: red 1px solid;
+        box-shadow: 0 0 0 0.25rem rgba(237, 31, 31, 0.25);
+      }
+      input.ng-valid {
+        border: green 1px solid;
+        box-shadow: 0 0 0 0.25rem rgba(31, 237, 124, 0.25);
+      }
+    `,
+  ],
 })
 export class UserFormComponent implements OnInit {
   @Input() user: IUser | undefined;
