@@ -33,4 +33,10 @@ export class UsersComponent implements OnInit {
       },
     });
   }
+
+  Reset() {
+    this.isNewUserTrigger();
+    this.router.navigate(['/users']);
+    console.log('reset!!!');
+  }
 }

@@ -31,12 +31,15 @@ import { IUser } from 'src/app/models/user';
       >
         {{ btnTitle }}
       </button>
+      <button (click)="reset()" class="btn btn-outline-danger float-end">
+        Отмена
+      </button>
     </form>
   `,
   styles: [
     `
       form {
-        max-width: 21.5rem;
+        max-width: 20rem;
       }
       input.ng-invalid.ng-touched {
         border: red 1px solid;
@@ -52,6 +55,7 @@ import { IUser } from 'src/app/models/user';
 export class UserFormComponent implements OnInit {
   @Input() user: IUser | undefined;
   @Output() onSubmit: EventEmitter<IUser> = new EventEmitter();
+  @Output() onReset: EventEmitter<IUser> = new EventEmitter();
 
   form!: FormGroup;
 
@@ -72,5 +76,8 @@ export class UserFormComponent implements OnInit {
     this.onSubmit.emit({
       ...this.form.value,
     });
+  }
+  reset() {
+    this.onReset.emit();
   }
 }
