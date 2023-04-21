@@ -21,6 +21,7 @@ export class UsersComponent implements OnInit {
 
   isNewUserTrigger() {
     this.isNewUser = !this.isNewUser;
+    this.router.navigate(['/users']);
   }
 
   Submit(user: IUser) {

@@ -16,6 +16,8 @@ export class UserComponent implements OnInit {
 
   user$?: Observable<IUser>;
 
+  isEdit: boolean = false;
+
   constructor(
     private usersService: UsersService,
     private route: ActivatedRoute,
@@ -41,6 +43,15 @@ export class UserComponent implements OnInit {
   }
 
   change() {
-    throw new Error('Method not implemented.');
+    this.isEdit = !this.isEdit;
+  }
+
+  Submit(user: IUser) {
+    console.log('user-edit>>', user);
+  }
+
+  Reset() {
+    this.change();
+    console.log('edit-reset!!!');
   }
 }

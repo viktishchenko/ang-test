@@ -13,6 +13,7 @@
     </div>
     <div class="list-group mb-2" *ngFor="let u of users">
       <a
+        (click)="isNewUser = false"
         class="list-group-item list-group-item-action"
         routerLinkActive="active-link"
         [routerLink]="[u.id]"
@@ -21,14 +22,15 @@
     </div>
   </div>
   <div class="col-sm-6">
-    <ng-container *ngIf="!isNewUser">
+    <ng-template [ngIf]="!isNewUser">
+      <!-- <ng-container *ngIf="!isNewUser"> -->
       <router-outlet></router-outlet>
-    </ng-container>
-    <ng-container *ngIf="isNewUser">
+    </ng-template>
+    <ng-template [ngIf]="isNewUser">
       <app-user-form
         (onSubmit)="Submit($event)"
         (onReset)="Reset()"
       ></app-user-form>
-    </ng-container>
+    </ng-template>
   </div>
 </div>
