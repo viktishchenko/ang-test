@@ -5,7 +5,7 @@ import { ITitle } from '../models/title';
 export const title: ITitle[] = [
   {
     id: 1,
-    title: 'Главная страница!',
+    title: 'Angular full-stack (front)',
   },
 ];
 

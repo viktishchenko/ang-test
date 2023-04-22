@@ -6,14 +6,18 @@
 <div class="row" *ngIf="users$ | async as users">
   <div class="col-sm-6 max-width">
     <div class="list-group mb-2">
-      <button class="btn btn-outline-primary" (click)="isNewUserTrigger()">
+      <button
+        [disabled]="isNewUser && !isEdit"
+        class="btn btn-outline-primary"
+        (click)="isNewUserTrigger()"
+      >
         <app-icon icon="bi bi-plus"></app-icon>
         Добавить
       </button>
     </div>
     <div class="list-group mb-2" *ngFor="let u of users">
       <button
-        [disabled]=""
+        [disabled]="(isEdit && !isNewUser) || isNewUser"
         (click)="isNewUser = false"
         class="list-group-item list-group-item-action"
         routerLinkActive="active-link"

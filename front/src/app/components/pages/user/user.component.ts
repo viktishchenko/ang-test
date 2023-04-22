@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { IUser } from 'src/app/models/user';
+import { DataService } from 'src/app/services/data.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -16,16 +17,21 @@ export class UserComponent implements OnInit {
 
   user$?: Observable<IUser>;
 
-  isEdit: boolean = false;
+  isEdit!: boolean;
+  subscription!: Subscription;
 
   constructor(
     private usersService: UsersService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private isEditData: DataService
   ) {}
 
   ngOnInit(): void {
     this.getUser();
+    this.subscription = this.isEditData.currentEdit.subscribe(
+      (v) => (this.isEdit = v)
+    );
   }
 
   getUser() {
@@ -43,7 +49,7 @@ export class UserComponent implements OnInit {
   }
 
   change() {
-    this.isEdit = !this.isEdit;
+    this.isEditData.getIsEditing(this.isEdit);
   }
 
   Submit(user: IUser) {
@@ -54,5 +60,9 @@ export class UserComponent implements OnInit {
   Reset() {
     this.change();
     console.log('edit-reset!!!');
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
