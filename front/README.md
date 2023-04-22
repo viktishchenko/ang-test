@@ -71,3 +71,9 @@ ng g c components/user-form -t -s --skip-tests --dry-run
 ```javascript
 .mb-3>label.form-label+input.input-control
 ```
+
+## jff
+
+```javascript
+ng g s services/data --dry-run
+```

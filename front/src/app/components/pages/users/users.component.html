@@ -12,13 +12,15 @@
       </button>
     </div>
     <div class="list-group mb-2" *ngFor="let u of users">
-      <a
+      <button
+        [disabled]=""
         (click)="isNewUser = false"
         class="list-group-item list-group-item-action"
         routerLinkActive="active-link"
         [routerLink]="[u.id]"
-        >{{ u.name }}</a
       >
+        {{ u.name }}
+      </button>
     </div>
   </div>
   <div class="col-sm-6">

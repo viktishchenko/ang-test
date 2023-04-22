@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IUser } from 'src/app/models/user';
 import { UsersService } from 'src/app/services/users.service';
@@ -47,6 +47,7 @@ export class UserComponent implements OnInit {
   }
 
   Submit(user: IUser) {
+    const { name, email } = user;
     console.log('user-edit>>', user);
   }
 

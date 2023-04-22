@@ -1,5 +1,13 @@
 import { IMenu } from '../models/menu';
 import { IUser } from '../models/user';
+import { ITitle } from '../models/title';
+
+export const title: ITitle[] = [
+  {
+    id: 1,
+    title: 'Главная страница!',
+  },
+];
 
 export const menu: IMenu[] = [
   {
