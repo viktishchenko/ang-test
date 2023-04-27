@@ -31,3 +31,9 @@ ng g c views/product-list --dry-run
 ```
 
 ![Alt text](front-shop/src/readmeAssets/top-bar.png)
+
+### add routing
+
+```javascript
+ng generate module app-routing --flat --module=app
+```
