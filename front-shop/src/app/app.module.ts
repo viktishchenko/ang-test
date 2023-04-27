@@ -4,21 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { TopBarComponent } from './views/top-bar/top-bar.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [AppComponent, TopBarComponent, ProductListComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
   bootstrap: [AppComponent],
 })
