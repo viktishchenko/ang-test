@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
 
 html,
 body {
@@ -16,4 +16,12 @@ body {
 
 router-outlet + * {
   padding: 0 16px;
+}
+
+/* Hyperlink */
+
+a {
+  cursor: pointer;
+  color: #1976d2;
+  text-decoration: none;
 }

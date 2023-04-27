@@ -37,3 +37,7 @@ ng g c views/product-list --dry-run
 ```javascript
 ng generate module app-routing --flat --module=app
 ```
+
+### structural directives
+
+![Alt text](front-shop/src/readmeAssets/structural-directives.png)
