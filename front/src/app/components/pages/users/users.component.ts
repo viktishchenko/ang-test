@@ -31,12 +31,11 @@ export class UsersComponent implements OnInit {
 
   isNewUserTrigger() {
     this.isNewUser = !this.isNewUser;
+    console.log('this.isNewUser>>', this.isNewUser);
     this.router.navigate(['/users']);
   }
 
   Submit(user: IUser) {
-    const { name, email, id = 123 } = user;
-    console.log('name,email>>', name, email, id);
     this.usersData.createUser(user).subscribe({
       complete: () => {
         console.log('firstUser>>', user);

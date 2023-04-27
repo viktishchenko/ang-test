@@ -53,8 +53,16 @@ export class UserComponent implements OnInit {
   }
 
   Submit(user: IUser) {
-    const { name, email } = user;
-    console.log('user-edit>>', user);
+    this.usersService.updateUser(user).subscribe((u) => {
+      if (user) {
+        console.log(
+          'this.route.params>>',
+          this.route.params.forEach((el) => console.log('el>>', el))
+        );
+        // this.change(), this.router.navigate(['/user', user.id]);
+        console.log('haloo>>');
+      }
+    });
   }
 
   Reset() {

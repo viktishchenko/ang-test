@@ -31,6 +31,12 @@ export class UsersService {
     return of(user);
   }
 
+  updateUser(user: IUser): Observable<IUser> {
+    const newUser = user;
+    console.log('UPDATE-USER>>', newUser);
+    return of(newUser);
+  }
+
   generateId() {
     return users.length ? Math.max(...users.map((u) => u.id)) + 1 : 1;
   }
