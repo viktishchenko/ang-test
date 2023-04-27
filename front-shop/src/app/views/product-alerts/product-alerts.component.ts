@@ -8,4 +8,5 @@ import { IPoduct } from 'src/app/models/product';
 })
 export class ProductAlertsComponent {
   @Input() getProductFromParent!: IPoduct;
+  @Output() notify = new EventEmitter();
 }

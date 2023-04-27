@@ -8,5 +8,8 @@
 
   <button mat-stroked-button (click)="share()">Share</button>
 
-  <app-product-alerts [getProductFromParent]="p"></app-product-alerts>
+  <app-product-alerts
+    [getProductFromParent]="p"
+    (notify)="onNotify()"
+  ></app-product-alerts>
 </div>

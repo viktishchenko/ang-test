@@ -57,3 +57,15 @@ ng generate component views/product-alerts --dry-run
 ```
 
 ![Alt text](front-shop/src/readmeAssets/from-parent-to-child.png)
+
+### pass data to a parent component
+
+`src/app/product-alerts/product-alerts.component.ts`
+
+```javascript
+  @Input() product!: IPoduct;
+  @Output() notify = new EventEmitter();
+
+```
+
+![Alt text](front-shop/src/readmeAssets/pass-to-parent.png)
