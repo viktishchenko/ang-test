@@ -16,6 +16,14 @@ ng add @angular/material
 
 ```javascript
 npm run start
+
+```
+
+### init w mat
+
+![Alt text](front-shop/src/readmeAssets/init-w-material.png)
+
+```javascript
 mkdir views
 ng g c  views/top-bar --dry-run
 
