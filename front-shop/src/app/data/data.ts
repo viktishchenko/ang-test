@@ -1,3 +1,5 @@
+// import { IPoduct } from '../models/product';
+
 import { IPoduct } from '../models/product';
 
 export const products: IPoduct[] = [

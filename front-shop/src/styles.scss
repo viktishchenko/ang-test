@@ -1,12 +1,19 @@
 /* Global Styles */
 
+* {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #616161;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .container {
@@ -24,4 +31,8 @@ a {
   cursor: pointer;
   color: #1976d2;
   text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
 }

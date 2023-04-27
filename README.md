@@ -41,3 +41,19 @@ ng generate module app-routing --flat --module=app
 ### structural directives
 
 ![Alt text](front-shop/src/readmeAssets/structural-directives.png)
+
+### pass data to a child component
+
+```javascript
+ng generate component views/product-alerts --dry-run
+
+```
+
+`src/app/product-alerts/product-alerts.component.ts`
+
+```javascript
+  @Input() product!: IPoduct;
+
+```
+
+![Alt text](front-shop/src/readmeAssets/from-parent-to-child.png)

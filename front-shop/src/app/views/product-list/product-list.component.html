@@ -1,8 +1,12 @@
 <h2>Products</h2>
 
-<div *ngFor="let p of productList">
+<div *ngFor="let p of productList" class="mb2">
   <a [title]="p.name + ' details'">
-    <h3 style="font-size: large">{{ p.name }}</h3>
+    <h3 class="title" style="color: #1976d2">{{ p.name }}</h3>
   </a>
   <p *ngIf="p.description">Description: {{ p.description }}</p>
+
+  <button mat-stroked-button (click)="share()">Share</button>
+
+  <app-product-alerts [getProductFromParent]="p"></app-product-alerts>
 </div>
