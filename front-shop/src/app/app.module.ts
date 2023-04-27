@@ -8,9 +8,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { TopBarComponent } from './views/top-bar/top-bar.component';
+import { ProductListComponent } from './views/product-list/product-list.component';
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent],
+  declarations: [AppComponent, TopBarComponent, ProductListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -27,4 +27,7 @@ npm run start
 mkdir views
 ng g c  views/top-bar --dry-run
 
+ng g c views/product-list --dry-run
 ```
+
+![Alt text](front-shop/src/readmeAssets/top-bar.png)
