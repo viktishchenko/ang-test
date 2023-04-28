@@ -78,3 +78,7 @@ ng g c views/product-details --dry-run
 ```
 
 ![Alt text](front-shop/src/readmeAssets/router-link.png)
+
+### view product details
+
+![Alt text](front-shop/src/readmeAssets/details-comp.png)
