@@ -69,3 +69,12 @@ ng generate component views/product-alerts --dry-run
 ```
 
 ![Alt text](front-shop/src/readmeAssets/pass-to-parent.png)
+
+### associate a URL path with a component
+
+```javascript
+ng g c views/product-details --dry-run
+
+```
+
+![Alt text](front-shop/src/readmeAssets/router-link.png)
