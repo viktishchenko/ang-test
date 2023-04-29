@@ -89,3 +89,10 @@ ng g c views/product-details --dry-run
  ng g s services/cart/cart --dry-run
 
 ```
+
+### create the cart view
+
+```javascript
+ng g c views/cart --dry-run
+
+```
