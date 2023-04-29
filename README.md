@@ -100,3 +100,12 @@ ng g c views/cart --dry-run
 ### display the cart items
 
 ![Alt text](front-shop/src/readmeAssets/cart.png)
+
+### shipping component w cartService & HttpClient
+
+```javascript
+ng g c views/cart --dry-run
+
+```
+
+![Alt text](front-shop/src/readmeAssets/shipping-comp.png)

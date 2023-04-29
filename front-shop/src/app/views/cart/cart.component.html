@@ -1,4 +1,7 @@
 <h3>Cart</h3>
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
 <div *ngIf="items.length; else elseBlock">
   <mat-card class="cart" *ngFor="let item of items">
     <mat-card-header>

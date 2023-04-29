@@ -1,0 +1,12 @@
+<h3>Shipping Prices</h3>
+<mat-list *ngFor="let shipping of shippingCosts | async">
+  <mat-list-item>
+    <span matListItemTitle
+      >{{ shipping.type }} - {{ shipping.price | currency }}</span
+    >
+  </mat-list-item>
+</mat-list>
+
+<a mat-stroked-button extended routerLink="/cart">
+  <mat-icon>arrow_back</mat-icon> back to cart
+</a>
