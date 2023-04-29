@@ -82,3 +82,10 @@ ng g c views/product-details --dry-run
 ### view product details
 
 ![Alt text](front-shop/src/readmeAssets/details-comp.png)
+
+### managing data/create the shopping cart service
+
+```javascript
+ ng g s services/cart/cart --dry-run
+
+```
