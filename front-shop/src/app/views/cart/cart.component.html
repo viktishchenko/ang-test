@@ -1,1 +1,11 @@
-<p>cart works!</p>
+<h3>Cart</h3>
+<div *ngIf="items.length; else elseBlock">
+  <mat-card class="cart" *ngFor="let item of items">
+    <mat-card-header>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+      <mat-card-subtitle>{{ item.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content> {{ item.description }}</mat-card-content>
+  </mat-card>
+</div>
+<ng-template #elseBlock>Your cart is empty.</ng-template>

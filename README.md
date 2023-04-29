@@ -96,3 +96,7 @@ ng g c views/product-details --dry-run
 ng g c views/cart --dry-run
 
 ```
+
+### display the cart items
+
+![Alt text](front-shop/src/readmeAssets/cart.png)
