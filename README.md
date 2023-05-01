@@ -109,3 +109,7 @@ ng g c views/cart --dry-run
 ```
 
 ![Alt text](front-shop/src/readmeAssets/shipping-comp.png)
+
+### cart form with validation
+
+![Alt text](front-shop/src/readmeAssets/cart-form.png)

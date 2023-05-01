@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TopBarComponent } from './views/top-bar/top-bar.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
@@ -26,10 +27,11 @@ import { ShippingComponent } from './views/shipping/shipping.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     AppRoutingModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
