@@ -3,8 +3,8 @@
 }
 
 input.ng-invalid.ng-touched {
-  box-shadow: 0 0 0 0.25rem rgba(237, 31, 31, 0.25);
+  border-bottom: 1px solid red;
 }
 input.ng-valid {
-  box-shadow: 0 0 0 0.25rem rgba(31, 237, 124, 0.25);
+  border-bottom: 1px solid green;
 }
