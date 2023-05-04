@@ -56,3 +56,14 @@ ng g i models/housinglocation  --dry-run
 ```
 
 ![Alt text](city-app/src/readmeAssets/location-comp.png)
+
+### send data from parent
+
+```javascript
+<app-housing-location
+    *ngFor="let housingLocationsss of housingLocationList"
+    [housingLocation]="housingLocationsss"
+></app-housing-location>
+```
+
+![Alt text](city-app/src/readmeAssets/ngFor-eg.png)
