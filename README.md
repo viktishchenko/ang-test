@@ -42,3 +42,17 @@ ng g c views/home --inline-template --skip-tests --dry-run
 ```
 
 ![Alt text](city-app/src/readmeAssets/home-comp.png)
+
+### add housing-location comp w css
+
+```javascript
+ng g c views/housingLocation --inline-template --skip-tests --dry-run
+```
+
+### add models
+
+```javascript
+ng g i models/housinglocation  --dry-run
+```
+
+![Alt text](city-app/src/readmeAssets/location-comp.png)

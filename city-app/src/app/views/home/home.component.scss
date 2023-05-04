@@ -2,6 +2,10 @@ form {
   max-width: 500px;
 }
 
+.content {
+  padding: var(--content-padding);
+}
+
 .results {
   display: grid;
   column-gap: 14px;
