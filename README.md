@@ -33,3 +33,12 @@ npm i bootstrap-icons
 ### init with bootstrap
 
 ![Alt text](city-app/src/readmeAssets/init-w-bootstrap.png)
+
+### add home comp w css
+
+```javascript
+ng g c views/home --inline-template --skip-tests --dry-run
+
+```
+
+![Alt text](city-app/src/readmeAssets/home-comp.png)
