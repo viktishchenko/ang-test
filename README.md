@@ -67,3 +67,9 @@ ng g i models/housinglocation  --dry-run
 ```
 
 ![Alt text](city-app/src/readmeAssets/ngFor-eg.png)
+
+### add service
+
+```javascript
+ng g s services/housing --skip-tests --dry-run
+```
