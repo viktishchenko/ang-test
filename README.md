@@ -79,3 +79,9 @@ ng g s services/housing --skip-tests --dry-run
 ```javascript
 ng g c views/details --inline-style --inline-template --skip-tests --dry-run
 ```
+
+### add routing
+
+```javascript
+ng generate module app-routing --flat --module=app --dry-run
+```
