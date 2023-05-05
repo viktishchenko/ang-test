@@ -73,3 +73,9 @@ ng g i models/housinglocation  --dry-run
 ```javascript
 ng g s services/housing --skip-tests --dry-run
 ```
+
+### add comp
+
+```javascript
+ng g c views/details --inline-style --inline-template --skip-tests --dry-run
+```
