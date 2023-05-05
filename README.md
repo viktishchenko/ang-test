@@ -85,3 +85,7 @@ ng g c views/details --inline-style --inline-template --skip-tests --dry-run
 ```javascript
 ng generate module app-routing --flat --module=app --dry-run
 ```
+
+- use route paramter to retrieve data
+
+![Alt text](city-app/src/readmeAssets/details-comp.png)
