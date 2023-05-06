@@ -19,11 +19,14 @@ import { HousingService } from 'src/app/services/housing.service';
         </div>
       </form>
     </section>
-    <section class="results container">
-      <app-housing-location
-        *ngFor="let housingLocationsss of housingLocationList"
-        [housingLocation]="housingLocationsss"
-      ></app-housing-location>
+    <section class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div
+          class="app-housing-location col"
+          *ngFor="let housingLocationsss of housingLocationList"
+          [housingLocation]="housingLocationsss"
+        ></div>
+      </div>
     </section>
   `,
   styleUrls: ['./home.component.scss'],

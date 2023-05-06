@@ -11,7 +11,7 @@ export class HousingService {
       name: 'Acme Fresh Start Housing',
       city: 'Chicago',
       state: 'IL',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 4,
       wifi: true,
       laundry: true,
@@ -21,7 +21,7 @@ export class HousingService {
       name: 'A113 Transitional Housing',
       city: 'Santa Monica',
       state: 'CA',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 0,
       wifi: false,
       laundry: true,
@@ -31,7 +31,7 @@ export class HousingService {
       name: 'Warm Beds Housing Support',
       city: 'Juneau',
       state: 'AK',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 1,
       wifi: false,
       laundry: false,
@@ -41,7 +41,7 @@ export class HousingService {
       name: 'Homesteady Housing',
       city: 'Chicago',
       state: 'IL',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 1,
       wifi: true,
       laundry: false,
@@ -51,7 +51,7 @@ export class HousingService {
       name: 'Happy Homes Group',
       city: 'Gary',
       state: 'IN',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 1,
       wifi: true,
       laundry: false,
@@ -61,7 +61,7 @@ export class HousingService {
       name: 'Hopeful Apartment Group',
       city: 'Oakland',
       state: 'CA',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 2,
       wifi: true,
       laundry: true,
@@ -71,7 +71,7 @@ export class HousingService {
       name: 'Seriously Safe Towns',
       city: 'Oakland',
       state: 'CA',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 5,
       wifi: true,
       laundry: true,
@@ -81,7 +81,7 @@ export class HousingService {
       name: 'Hopeful Housing Solutions',
       city: 'Oakland',
       state: 'CA',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 2,
       wifi: true,
       laundry: true,
@@ -91,7 +91,7 @@ export class HousingService {
       name: 'Seriously Safe Towns',
       city: 'Oakland',
       state: 'CA',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 10,
       wifi: false,
       laundry: false,
@@ -101,7 +101,7 @@ export class HousingService {
       name: 'Capital Safe Towns',
       city: 'Portland',
       state: 'OR',
-      photo: 'http://via.placeholder.com/640x360',
+      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
       availableUnits: 6,
       wifi: true,
       laundry: true,
@@ -117,6 +117,12 @@ export class HousingService {
   getHousingLocationById(id: number): IHousingLocation | undefined {
     return this.housingLocationList.find(
       (housingLocation) => housingLocation.id === id
+    );
+  }
+
+  submitAplication(firstName: string, lastName: string, email: string) {
+    console.log(
+      `Homes application recieved: firstName: ${firstName}, lastName: ${lastName}, email: ${email}`
     );
   }
 }

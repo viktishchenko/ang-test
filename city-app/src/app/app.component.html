@@ -1,14 +1,18 @@
-<a class="navbar-brand" [routerLink]="''">
-  <header>
-    <nav class="container navbar bg-body-tertiary">
-      <img
-        src="../assets/logo.svg"
-        alt="Logo"
-        width="93"
-        height="28"
-        class="d-inline-block align-text-top"
-      />
-    </nav>
-  </header>
-</a>
-<router-outlet></router-outlet>
+<main>
+  <a class="navbar-brand" [routerLink]="''">
+    <header>
+      <nav class="container navbar bg-body-tertiary">
+        <img
+          src="../assets/logo.svg"
+          alt="Logo"
+          width="93"
+          height="28"
+          class="d-inline-block align-text-top"
+        />
+      </nav>
+    </header>
+  </a>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</main>

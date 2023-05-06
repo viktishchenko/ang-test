@@ -89,3 +89,39 @@ ng generate module app-routing --flat --module=app --dry-run
 - use route paramter to retrieve data
 
 ![Alt text](city-app/src/readmeAssets/details-comp.png)
+
+### add a form using Angular's forms feature
+
+- connect the data captured in the form to a form using an event handler
+
+`housing.service.ts`
+
+```javascript
+  submitAplication(firstName: string, lastName: string, email: string) {
+    console.log(
+      `Homes application recieved: firstName: ${firstName}, lastName: ${lastName}, email: ${email}`
+    );
+  }
+```
+
+`detais.component.ts`
+
+```javascript
+export class DetailsComponent {
+  applyForm = new FormGroup({
+    firstName: new FormControl(""),
+    lastName: new FormControl(""),
+    email: new FormControl(""),
+  });
+
+  submitApplication() {
+    this.housingService.submitAplication(
+      this.applyForm.value.firstName ?? "",
+      this.applyForm.value.lastName ?? "",
+      this.applyForm.value.email ?? ""
+    );
+  }
+}
+```
+
+![Alt text](city-app/src/readmeAssets/details-w-form.png)
