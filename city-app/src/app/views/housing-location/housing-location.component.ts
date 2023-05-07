@@ -17,10 +17,7 @@ import { IHousingLocation } from 'src/app/models/housinglocation';
         </p>
       </div>
       <div class="card-footer">
-        <a [routerLink]="['/details', housingLocation.id]">
-          <!-- <small class="text-body-secondary">Learn More ></small> -->
-          Learn More
-        </a>
+        <a [routerLink]="['/details', housingLocation.id]"> Learn More </a>
       </div>
     </div>
   `,

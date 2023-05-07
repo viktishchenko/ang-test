@@ -125,3 +125,35 @@ export class DetailsComponent {
 ```
 
 ![Alt text](city-app/src/readmeAssets/details-w-form.png)
+
+### add search feature
+
+- filter data
+
+`housing.service.ts`
+
+```javascript
+  getFilteredLocationList(text: string): Observable<IHousingLocation[]> {
+    return of(
+      this.housingLocationList.filter((housingLocation) =>
+        housingLocation.city.toLowerCase().includes(text.toLowerCase())
+      )
+    );
+  }
+```
+
+`home.component.ts`
+
+- click handle, pass data, get data
+
+```javascript
+  filterResults(text: string) {
+    this.housingService
+      .getFilteredLocationList(text)
+      .subscribe(
+        (filteredLocation) => (this.housingLocationList = filteredLocation)
+      );
+  }
+```
+
+![Alt text](city-app/src/readmeAssets/search-res.png)

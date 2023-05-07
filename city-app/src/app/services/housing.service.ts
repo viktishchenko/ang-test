@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IHousingLocation } from '../models/housinglocation';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -123,6 +124,14 @@ export class HousingService {
   submitAplication(firstName: string, lastName: string, email: string) {
     console.log(
       `Homes application recieved: firstName: ${firstName}, lastName: ${lastName}, email: ${email}`
+    );
+  }
+
+  getFilteredLocationList(text: string): Observable<IHousingLocation[]> {
+    return of(
+      this.housingLocationList.filter((housingLocation) =>
+        housingLocation.city.toLowerCase().includes(text.toLowerCase())
+      )
     );
   }
 }

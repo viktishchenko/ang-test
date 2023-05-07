@@ -6,14 +6,19 @@ import { HousingService } from 'src/app/services/housing.service';
   selector: 'app-home',
   template: `
     <section class="container content">
-      <form role="search">
+      <form>
         <div class="input-group mb-3">
           <input
+            #filter
             type="text"
             class="form-control"
             placeholder="Filter by city"
           />
-          <button type="submit" class="primary">
+          <button
+            type="button"
+            class="primary"
+            (click)="filterResults(filter.value)"
+          >
             <i class="bi bi-search me-2"></i> Search
           </button>
         </div>
@@ -33,8 +38,15 @@ import { HousingService } from 'src/app/services/housing.service';
 })
 export class HomeComponent {
   housingLocationList: IHousingLocation[] = [];
-
   constructor(private housingService: HousingService) {
     this.housingLocationList = this.housingService.getAllHousingLocations();
+  }
+
+  filterResults(text: string) {
+    this.housingService
+      .getFilteredLocationList(text)
+      .subscribe(
+        (filteredLocation) => (this.housingLocationList = filteredLocation)
+      );
   }
 }
