@@ -5,3 +5,9 @@ form {
 .content {
   padding: var(--content-padding);
 }
+
+.btn:hover {
+  background-color: #e8e7fa;
+  border-color: #bfbece;
+  color: #212529;
+}

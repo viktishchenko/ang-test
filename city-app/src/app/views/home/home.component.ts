@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { IHousingLocation } from 'src/app/models/housinglocation';
 import { HousingService } from 'src/app/services/housing.service';
 
@@ -6,7 +7,7 @@ import { HousingService } from 'src/app/services/housing.service';
   selector: 'app-home',
   template: `
     <section class="container content">
-      <form>
+      <form id="searchForm">
         <div class="input-group mb-3">
           <input
             #filter
@@ -33,20 +34,38 @@ import { HousingService } from 'src/app/services/housing.service';
         ></div>
       </div>
     </section>
+    <ng-template [ngIf]="goBack">
+      <div class="container p-3">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="resetAll()"
+        >
+          <i class="bi bi-skip-backward"></i> Reset results
+        </button>
+      </div>
+    </ng-template>
   `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   housingLocationList: IHousingLocation[] = [];
+  goBack: boolean = false;
   constructor(private housingService: HousingService) {
     this.housingLocationList = this.housingService.getAllHousingLocations();
   }
 
   filterResults(text: string) {
-    this.housingService
-      .getFilteredLocationList(text)
-      .subscribe(
-        (filteredLocation) => (this.housingLocationList = filteredLocation)
-      );
+    this.housingService.getFilteredLocationList(text).subscribe({
+      next: (filteredLocation) => (this.housingLocationList = filteredLocation),
+      complete: () =>
+        !this.goBack && text ? (this.goBack = true) : (this.goBack = false),
+    });
+  }
+
+  resetAll() {
+    this.goBack = false;
+    (<HTMLFormElement>document.getElementById('searchForm')).reset();
+    this.filterResults('');
   }
 }

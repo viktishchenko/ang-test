@@ -157,3 +157,7 @@ export class DetailsComponent {
 ```
 
 ![Alt text](city-app/src/readmeAssets/search-res.png)
+
+### add reset search results
+
+![Alt text](city-app/src/readmeAssets/add-reset.png)
