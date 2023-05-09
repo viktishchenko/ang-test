@@ -161,3 +161,34 @@ export class DetailsComponent {
 ### add reset search results
 
 ![Alt text](city-app/src/readmeAssets/add-reset.png)
+
+### ad json-server, refactor service to use web server instead of local array
+
+```javascripts
+npm install -g json-server
+
+// PS D:\work\ang-test\city-app> json-server --watch ./server/db.json
+
+```
+
+![Alt text](city-app/src/readmeAssets/server-db.png)
+
+`app.modules.ts`
+
+- add HttpClient provided by Angular
+
+```javascript
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  imports: [ HttpClientModule],
+})
+```
+
+`housing.services.ts`
+
+- change func with Observale
+
+`details.component.ts & home.components.ts`
+
+- subscribe to related func

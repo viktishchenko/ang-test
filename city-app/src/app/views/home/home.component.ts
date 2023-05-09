@@ -52,7 +52,12 @@ export class HomeComponent {
   housingLocationList: IHousingLocation[] = [];
   goBack: boolean = false;
   constructor(private housingService: HousingService) {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.housingService
+      .getAllHousingLocations()
+      .subscribe(
+        (housingLocationList) =>
+          (this.housingLocationList = housingLocationList)
+      );
   }
 
   filterResults(text: string) {

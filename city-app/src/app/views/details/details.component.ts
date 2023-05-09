@@ -163,9 +163,9 @@ export class DetailsComponent {
     private housingService: HousingService
   ) {
     this.housingLocationId = Number(this.route.snapshot.params['id']);
-    this.housingLocation = this.housingService.getHousingLocationById(
-      this.housingLocationId
-    );
+    this.housingService
+      .getHousingLocationById(this.housingLocationId)
+      .subscribe((housingLocation) => (this.housingLocation = housingLocation));
   }
 
   submitApplication() {

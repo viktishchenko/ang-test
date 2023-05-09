@@ -1,123 +1,25 @@
 import { Injectable } from '@angular/core';
 import { IHousingLocation } from '../models/housinglocation';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+const BASE_URL = 'http://localhost:3000/';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HousingService {
-  housingLocationList: IHousingLocation[] = [
-    {
-      id: 0,
-      name: 'Acme Fresh Start Housing',
-      city: 'Chicago',
-      state: 'IL',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 4,
-      wifi: true,
-      laundry: true,
-    },
-    {
-      id: 1,
-      name: 'A113 Transitional Housing',
-      city: 'Santa Monica',
-      state: 'CA',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 0,
-      wifi: false,
-      laundry: true,
-    },
-    {
-      id: 2,
-      name: 'Warm Beds Housing Support',
-      city: 'Juneau',
-      state: 'AK',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 1,
-      wifi: false,
-      laundry: false,
-    },
-    {
-      id: 3,
-      name: 'Homesteady Housing',
-      city: 'Chicago',
-      state: 'IL',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 1,
-      wifi: true,
-      laundry: false,
-    },
-    {
-      id: 4,
-      name: 'Happy Homes Group',
-      city: 'Gary',
-      state: 'IN',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 1,
-      wifi: true,
-      laundry: false,
-    },
-    {
-      id: 5,
-      name: 'Hopeful Apartment Group',
-      city: 'Oakland',
-      state: 'CA',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 2,
-      wifi: true,
-      laundry: true,
-    },
-    {
-      id: 6,
-      name: 'Seriously Safe Towns',
-      city: 'Oakland',
-      state: 'CA',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 5,
-      wifi: true,
-      laundry: true,
-    },
-    {
-      id: 7,
-      name: 'Hopeful Housing Solutions',
-      city: 'Oakland',
-      state: 'CA',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 2,
-      wifi: true,
-      laundry: true,
-    },
-    {
-      id: 8,
-      name: 'Seriously Safe Towns',
-      city: 'Oakland',
-      state: 'CA',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 10,
-      wifi: false,
-      laundry: false,
-    },
-    {
-      id: 9,
-      name: 'Capital Safe Towns',
-      city: 'Portland',
-      state: 'OR',
-      photo: 'https://via.placeholder.com/640x360/f0f0f0/615dc8',
-      availableUnits: 6,
-      wifi: true,
-      laundry: true,
-    },
-  ];
+  private model = 'locations';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getAllHousingLocations(): IHousingLocation[] {
-    return this.housingLocationList;
+  getAllHousingLocations(): Observable<IHousingLocation[]> {
+    return this.http.get<IHousingLocation[]>(this.getUrl());
   }
 
-  getHousingLocationById(id: number): IHousingLocation | undefined {
-    return this.housingLocationList.find(
-      (housingLocation) => housingLocation.id === id
+  getHousingLocationById(id: number): Observable<IHousingLocation | undefined> {
+    return this.getAllHousingLocations().pipe(
+      map((el) => el.find((elem) => elem.id === id))
     );
   }
 
@@ -128,10 +30,16 @@ export class HousingService {
   }
 
   getFilteredLocationList(text: string): Observable<IHousingLocation[]> {
-    return of(
-      this.housingLocationList.filter((housingLocation) =>
-        housingLocation.city.toLowerCase().includes(text.toLowerCase())
+    return this.getAllHousingLocations().pipe(
+      map((el) =>
+        el.filter((elem) =>
+          elem.city.toLowerCase().includes(text.toLowerCase())
+        )
       )
     );
+  }
+
+  private getUrl() {
+    return `${BASE_URL}${this.model}/`;
   }
 }
