@@ -192,3 +192,5 @@ import { HttpClientModule } from '@angular/common/http';
 `details.component.ts & home.components.ts`
 
 - subscribe to related func
+
+# The End
