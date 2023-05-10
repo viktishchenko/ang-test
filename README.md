@@ -15,3 +15,7 @@ ng new heroes --directory ./
 ```
 
 ![Alt text](heroes/src/readmeAssets/init-app.png)
+
+### add css(scss)
+
+![Alt text](heroes/src/readmeAssets/init-app-w-css.png)
