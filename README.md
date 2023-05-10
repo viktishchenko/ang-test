@@ -19,3 +19,13 @@ ng new heroes --directory ./
 ### add css(scss)
 
 ![Alt text](heroes/src/readmeAssets/init-app-w-css.png)
+
+### add component, Angular Material, 2 way binding
+
+```javascript
+ng g c views/heroes --skip-tests --dry-run
+
+ng add @angular/material
+```
+
+![Alt text](heroes/src/readmeAssets/add-material.png)
