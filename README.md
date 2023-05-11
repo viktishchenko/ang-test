@@ -39,3 +39,15 @@ ng add @angular/material
 ```javascript
 ng g c views/hero-detail --dry-run
 ```
+
+- send data from parent to child with Angular property binding (@Input)
+
+```javascript
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+import { Input } from '@angular/core';
+
+export class HeroDetailComponent {
+  @Input() hero?: Hero;
+}
+```
