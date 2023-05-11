@@ -33,3 +33,9 @@ ng add @angular/material
 ### add mock, display data list, select data, conditionally HTML, toggle CSS with class binding
 
 ![Alt text](heroes/src/readmeAssets/hero-upd.png)
+
+### create a feature component (split a large comp)
+
+```javascript
+ng g c views/hero-detail --dry-run
+```

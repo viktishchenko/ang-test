@@ -9,7 +9,6 @@ import { IHero } from 'src/app/models/hero';
 })
 export class HeroesComponent {
   heroes = HEROES;
-  selected: boolean = false;
   selectedHero?: IHero;
 
   onSelect(hero: IHero) {
