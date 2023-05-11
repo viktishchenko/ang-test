@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HEROES } from 'src/app/data/mack-heroes';
 import { IHero } from 'src/app/models/hero';
 
 @Component({
@@ -7,8 +8,11 @@ import { IHero } from 'src/app/models/hero';
   styleUrls: ['./heroes.component.scss'],
 })
 export class HeroesComponent {
-  hero: IHero = {
-    id: 1,
-    name: 'Windstorm',
-  };
+  heroes = HEROES;
+  selected: boolean = false;
+  selectedHero?: IHero;
+
+  onSelect(hero: IHero) {
+    this.selectedHero = hero;
+  }
 }

@@ -29,3 +29,7 @@ ng add @angular/material
 ```
 
 ![Alt text](heroes/src/readmeAssets/add-material.png)
+
+### add mock, display data list, select data, conditionally HTML, toggle CSS with class binding
+
+![Alt text](heroes/src/readmeAssets/hero-upd.png)
