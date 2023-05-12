@@ -75,3 +75,13 @@ export class HeroesComponent implements OnInit {
 }
 
 ```
+
+### add Observable (asynchronous approach with [RxJS library](https://rxjs.dev/))
+
+```javascript
+getHeroes(): Observable<Hero[]> {
+  const heroes = of(HEROES);
+  return heroes;
+}
+
+```

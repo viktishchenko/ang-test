@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IHero } from '../models/hero';
 import { HEROES } from '../data/mack-heroes';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { HEROES } from '../data/mack-heroes';
 export class HeroService {
   constructor() {}
 
-  getHeroes(): IHero[] {
-    return HEROES;
+  getHeroes(): Observable<IHero[]> {
+    return of(HEROES);
   }
 }
