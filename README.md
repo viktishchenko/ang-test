@@ -85,3 +85,52 @@ getHeroes(): Observable<Hero[]> {
 }
 
 ```
+
+### show message with service
+
+```javascript
+ng g c views/messages --skip-tests --dry-run
+ng g s services/message --dry-run
+
+// service exposes its cache of messages and two methods:
+export class MessageService {
+  messages: string[] = [];
+
+  add(message: string) {
+    this.messages.push(message);
+  }
+
+  clear() {
+    this.messages = [];
+  }
+}
+```
+
+- import MessageService to HeroService
+<!-- This is an example of a typical service-in-service scenario in which we inject the MessageService into the HeroService which is injected into the HeroesComponent. -->
+
+```javascript
+getHeroes(): Observable<Hero[]> {
+  const heroes = of(HEROES);
+  this.messageService.add('HeroService: fetched heroes');
+  return heroes;
+}
+
+  // messages.component.ts
+export class MessagesComponent {
+  /* The messageService property must be public because we're going to bind to it in the template.
+  Angular only binds to public component properties.
+  */
+ constructor(public messageService: MessageService) {}
+}
+
+ // messages.component.html
+<div *ngIf="messageService.messages.length">
+  <h2>Messages</h2>
+  <button type="button" class="clear"
+          (click)="messageService.clear()">Clear messages</button>
+  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+</div>
+```
+
+![Alt text](heroes/src/readmeAssets/message-service.png)

@@ -7,10 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 
 import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './views/hero-detail/hero-detail.component'; // <-- NgModel lives here
+import { HeroDetailComponent } from './views/hero-detail/hero-detail.component';
+import { MessagesComponent } from './views/messages/messages.component'; // <-- NgModel lives here
 
 @NgModule({
-  declarations: [AppComponent, HeroesComponent, HeroDetailComponent],
+  declarations: [AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
