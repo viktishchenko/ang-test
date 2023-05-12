@@ -51,3 +51,27 @@ export class HeroDetailComponent {
   @Input() hero?: Hero;
 }
 ```
+
+### add services, implements service for a component
+
+```javascript
+ng g s services/hero --dry-run
+
+import { IHero } from 'src/app/models/hero';
+import { HeroService } from 'src/app/services/hero.service';
+
+export class HeroesComponent implements OnInit {
+  heroes: IHero[] = [];
+
+  constructor(private heroService: HeroService) {}
+
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  getHeroes() {
+    this.heroes = this.heroService.getHeroes();
+  }
+}
+
+```
