@@ -156,3 +156,26 @@ export class HeroesComponent implements OnInit {
 ```
 
 ![Alt text](heroes/src/readmeAssets/msg-service.png)
+
+### app nav structure
+
+![Alt text](heroes/src/readmeAssets/nav-structure.png)
+
+```javascript
+ng generate module app-routing --flat --module=app --dry-run
+
+// basic routing
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HeroesComponent } from './views/heroes/heroes.component';
+
+const routes: Routes = [{ path: 'heroes', component: HeroesComponent }];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+```
+
+![Alt text](heroes/src/readmeAssets/nav-structure.png)

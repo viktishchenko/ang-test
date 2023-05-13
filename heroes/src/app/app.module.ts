@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './views/heroes/heroes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroDetailComponent } from './views/hero-detail/hero-detail.component';
+import { MessagesComponent } from './views/messages/messages.component';
 
-import { MessagesComponent } from './views/messages/messages.component'; // <-- NgModel lives here
+import { AppRoutingModule } from './app-routing.module'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MessagesComponent } from './views/messages/messages.component'; // <-- 
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
