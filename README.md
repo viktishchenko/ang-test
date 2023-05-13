@@ -134,3 +134,25 @@ export class MessagesComponent {
 ```
 
 ![Alt text](heroes/src/readmeAssets/message-service.png)
+
+### add msg srv to another comp
+
+```javascript
+import { MessageService } from 'src/app/services/message.service';
+
+export class HeroesComponent implements OnInit {
+  heroes: IHero[] = [];
+  selectedHero?: IHero;
+
+  constructor(
+    private messageService: MessageService
+  ) {}
+
+  onSelect(hero: IHero) {
+    this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  }
+}
+```
+
+![Alt text](heroes/src/readmeAssets/msg-service.png)

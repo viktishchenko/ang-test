@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+
+import { Observable, of } from 'rxjs';
+
 import { IHero } from '../models/hero';
 import { HEROES } from '../data/mack-heroes';
-import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
 @Injectable({
