@@ -1,16 +1,13 @@
 <mat-list role="list" class="heroes">
   <mat-list-item
+    routerLink="/detail/{{ hero.id }}"
     [class.selected]="hero === selectedHero"
     role="listitem"
     *ngFor="let hero of heroes"
-    (click)="onSelect(hero)"
   >
-    <mat-icon matListItemIcon
-      >{{ hero === selectedHero ? "folder_open" : "folder" }}
-    </mat-icon>
+    <mat-icon matListItemIcon> folder </mat-icon>
+
     <div matListItemTitle>{{ hero.id }}</div>
     <div matListItemLine>{{ hero.name }}</div>
   </mat-list-item>
 </mat-list>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>

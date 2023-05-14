@@ -25,9 +25,4 @@ export class HeroesComponent implements OnInit {
   getHeroes() {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
-
-  onSelect(hero: IHero) {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
 }

@@ -2,9 +2,26 @@
   width: 20rem;
 }
 
+.heroes a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.mdc-list-item.mdc-list-item--with-three-lines {
+  height: 60px;
+}
+
+.mdc-list-item--with-leading-icon .mdc-list-item__start {
+  color: rgb(38, 77, 115);
+}
+
 .heroes .mdc-list-item--with-leading-icon:hover .mdc-list-item__start {
   color: rgb(94, 99, 104);
   transition: all ease-out 0.2s;
+}
+
+.mdc-list-item__secondary-text {
+  color: rgb(38, 77, 115);
 }
 
 .heroes mat-list-item:not(:first-of-type) {

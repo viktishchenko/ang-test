@@ -196,3 +196,7 @@ const routes: Routes = [
 ```
 
 ![Alt text](heroes/src/readmeAssets/add-routes.png)
+
+### add detail comp with route
+
+![Alt text](heroes/src/readmeAssets/detail-comp.png)
