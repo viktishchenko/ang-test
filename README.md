@@ -238,3 +238,7 @@ HttpClientInMemoryWebApiModule.forRoot(
   InMemoryDataService, { dataEncapsulation: false }
 )
 ```
+
+### Heroes and HTTP (CRUD simulator)
+
+![Alt text](heroes/src/readmeAssets/crud-simulator.png)

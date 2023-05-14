@@ -1,5 +1,5 @@
 .heroes {
-  width: 20rem;
+  max-width: 20rem;
 }
 
 .heroes a {
@@ -35,4 +35,17 @@
 
 .heroes .selected {
   background: whitesmoke;
+}
+
+.add-button {
+  margin: 0;
+}
+
+.delete {
+  position: absolute;
+  margin: 0;
+  right: 6px;
+  top: 5px;
+  font-size: 1.2rem;
+  padding: 15px;
 }
