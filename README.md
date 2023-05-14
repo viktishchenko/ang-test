@@ -200,3 +200,41 @@ const routes: Routes = [
 ### add detail comp with route
 
 ![Alt text](heroes/src/readmeAssets/detail-comp.png)
+
+### simulate a data server
+
+```javascript
+  npm i angular-in-memory-web-api@0.15.0
+
+  // app.module.ts
+
+import { HttpClientModule } from '@angular/common/http';
+
+// ---
+
+ng g s servises/InMemoryData --dry-run
+
+// app.module.ts
+
+@NgModule({
+  imports: [
+    HttpClientModule,
+  ],
+})
+
+// app.module.ts
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+// app.module.ts
+
+HttpClientModule,
+
+// The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+// and returns simulated server responses.
+// Remove it when a real server is ready to receive requests.
+HttpClientInMemoryWebApiModule.forRoot(
+  InMemoryDataService, { dataEncapsulation: false }
+)
+```
