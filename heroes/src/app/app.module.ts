@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroDetailComponent } from './views/hero-detail/hero-detail.component';
 import { MessagesComponent } from './views/messages/messages.component';
 
-import { AppRoutingModule } from './app-routing.module'; // <-- NgModel lives here
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './views/dashboard/dashboard.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module'; // <-- NgModel lives he
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

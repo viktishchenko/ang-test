@@ -179,3 +179,20 @@ export class AppRoutingModule {}
 ```
 
 ![Alt text](heroes/src/readmeAssets/nav-structure.png)
+
+### add dashboard comp w inline opt
+
+```javascript
+ng g c views/dashboard --inline-style --inline-template --skip-tests --dry-run
+
+// router to navigate among different components
+const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'heroes', component: HeroesComponent },
+  { path: '**', redirectTo: 'dashboard' },
+];
+
+```
+
+![Alt text](heroes/src/readmeAssets/add-routes.png)
