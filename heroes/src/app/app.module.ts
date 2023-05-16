@@ -15,7 +15,8 @@ import { HeroDetailComponent } from './views/hero-detail/hero-detail.component';
 import { MessagesComponent } from './views/messages/messages.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './views/dashboard/dashboard.component'; // <-- NgModel lives here
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { HeroSearchComponent } from './views/hero-search/hero-search.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component'; // <
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    HeroSearchComponent,
   ],
   imports: [
     BrowserModule,

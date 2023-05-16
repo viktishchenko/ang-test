@@ -5,6 +5,7 @@ import { HeroService } from 'src/app/services/hero.service';
 @Component({
   selector: 'app-dashboard',
   template: `
+    <app-hero-search></app-hero-search>
     <h2>Top Heroes</h2>
     <div class="heroes-menu">
       <a routerLink="/detail/{{ hero.id }}" *ngFor="let hero of heroes">

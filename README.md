@@ -242,3 +242,11 @@ HttpClientInMemoryWebApiModule.forRoot(
 ### Heroes and HTTP (CRUD simulator)
 
 ![Alt text](heroes/src/readmeAssets/crud-simulator.png)
+
+### add search comp
+
+```javascript
+ng g c views/hero-search --inline-style --inline-template --skip-tests  --dry-run
+```
+
+![Alt text](heroes/src/readmeAssets/search-comp.png)
