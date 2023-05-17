@@ -61,3 +61,7 @@ ng g c views/hero-form --inline-style --inline-template --skip-tests --dry-run
 ```
 
 ![Alt text](tpd-form/src/readmeAssets/add-form.png)
+
+### bind input controls to data properties
+
+![Alt text](tpd-form/src/readmeAssets/bind-input-w-data.png)

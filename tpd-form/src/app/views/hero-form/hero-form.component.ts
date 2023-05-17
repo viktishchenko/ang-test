@@ -5,32 +5,46 @@ import { Hero } from 'src/app/models/hero';
   selector: 'app-hero-form',
   template: `
     <h1>Hero from</h1>
-    <form>
+    <form #heroForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
         <input
+          id="name"
+          [(ngModel)]="model.name"
+          required
           type="text"
           class="form-control"
-          id="name"
           placeholder="Dr. IQ"
+          name="name"
         />
       </div>
       <div class="form-group">
         <label for="alterEgo">Alter Ego</label>
         <input
+          id="alterEgo"
+          [(ngModel)]="model.alterEgo"
           type="text"
           class="form-control"
-          id="alterEgo"
           placeholder="Chack OverStreet"
+          name="alterEgo"
         />
       </div>
       <div class="form-group">
         <label for="power">Hero Power</label>
-        <select class="form-control" id="power">
+        <select
+          class="form-control"
+          id="power"
+          required
+          [(ngModel)]="model.power"
+          name="power"
+        >
           <option *ngFor="let pow of powers">{{ pow }}</option>
         </select>
       </div>
     </form>
+    <div>
+      {{ model | json }}
+    </div>
   `,
   styles: [
     `
