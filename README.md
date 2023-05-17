@@ -53,3 +53,11 @@ button.primary {
 ```
 
 ![Alt text](tpd-form/src/readmeAssets/ini-w-custom-css.png)
+
+### add comp & data model class
+
+```javascript
+ng g c views/hero-form --inline-style --inline-template --skip-tests --dry-run
+```
+
+![Alt text](tpd-form/src/readmeAssets/add-form.png)
