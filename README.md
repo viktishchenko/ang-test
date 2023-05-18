@@ -69,3 +69,14 @@ ng g c views/hero-form --inline-style --inline-template --skip-tests --dry-run
 ### add css form validation
 
 ![Alt text](tpd-form/src/readmeAssets/form-validation.png)
+
+- display alert msg
+
+```javascript
+      <input  #name="ngModel"/>
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
+```
+
+![Alt text](tpd-form/src/readmeAssets/display-alert.png)

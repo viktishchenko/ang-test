@@ -16,7 +16,11 @@ import { Hero } from 'src/app/models/hero';
           class="form-control"
           placeholder="Dr. IQ"
           name="name"
+          #name="ngModel"
         />
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
       </div>
       <div class="form-group">
         <label for="alterEgo">Alter Ego</label>
