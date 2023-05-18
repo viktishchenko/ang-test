@@ -80,3 +80,7 @@ ng g c views/hero-form --inline-style --inline-template --skip-tests --dry-run
 ```
 
 ![Alt text](tpd-form/src/readmeAssets/display-alert.png)
+
+### submit the form with/without ngSubmit
+
+![Alt text](tpd-form/src/readmeAssets/form-submit.png)

@@ -5,7 +5,7 @@ import { Hero } from 'src/app/models/hero';
   selector: 'app-hero-form',
   template: `
     <h1>Hero from</h1>
-    <form #heroForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
         <input
@@ -14,7 +14,7 @@ import { Hero } from 'src/app/models/hero';
           required
           type="text"
           class="form-control"
-          placeholder="Dr. IQ"
+          placeholder="E.g. Dr. IQ"
           name="name"
           #name="ngModel"
         />
@@ -29,7 +29,7 @@ import { Hero } from 'src/app/models/hero';
           [(ngModel)]="model.alterEgo"
           type="text"
           class="form-control"
-          placeholder="Chack OverStreet"
+          placeholder="E.g. Chack OverStreet"
           name="alterEgo"
         />
       </div>
@@ -45,10 +45,27 @@ import { Hero } from 'src/app/models/hero';
           <option *ngFor="let pow of powers">{{ pow }}</option>
         </select>
       </div>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!heroForm.form.valid"
+      >
+        Submit
+      </button>
     </form>
     <div>
       {{ model | json }}
     </div>
+    <hr />
+    <button class="btn btn-dark" (click)="addHero()">add new hero</button>
+    <button
+      [disabled]="!heroForm.form.valid"
+      (click)="onSubmit()"
+      type="submit"
+      class="btn btn-primary float-end"
+    >
+      submit form
+    </button>
   `,
   styles: [
     `
@@ -66,6 +83,12 @@ export class HeroFormComponent {
   submitted = false;
 
   onSubmit() {
+    console.log('form submitted');
     this.submitted = true;
+  }
+
+  addHero() {
+    this.model = new Hero(42, '', '');
+    console.log('add new hero...>>', this.model.alterEgo);
   }
 }
